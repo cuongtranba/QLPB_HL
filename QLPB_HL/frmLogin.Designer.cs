@@ -38,6 +38,7 @@
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.error_message_lb = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             this.txtUserName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtUserName.Location = new System.Drawing.Point(238, 48);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(138, 20);
+            this.txtUserName.Size = new System.Drawing.Size(199, 20);
             this.txtUserName.TabIndex = 2;
             // 
             // txtPassword
@@ -72,7 +73,7 @@
             this.txtPassword.Location = new System.Drawing.Point(238, 74);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(138, 20);
+            this.txtPassword.Size = new System.Drawing.Size(199, 20);
             this.txtPassword.TabIndex = 3;
             // 
             // label3
@@ -89,7 +90,7 @@
             this.cbxPeriod.FormattingEnabled = true;
             this.cbxPeriod.Location = new System.Drawing.Point(238, 100);
             this.cbxPeriod.Name = "cbxPeriod";
-            this.cbxPeriod.Size = new System.Drawing.Size(138, 21);
+            this.cbxPeriod.Size = new System.Drawing.Size(199, 21);
             this.cbxPeriod.TabIndex = 5;
             // 
             // pictureBox1
@@ -129,11 +130,20 @@
             this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 9;
             // 
+            // error_message_lb
+            // 
+            this.error_message_lb.AutoSize = true;
+            this.error_message_lb.Location = new System.Drawing.Point(149, 132);
+            this.error_message_lb.Name = "error_message_lb";
+            this.error_message_lb.Size = new System.Drawing.Size(0, 13);
+            this.error_message_lb.TabIndex = 10;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(411, 197);
+            this.ClientSize = new System.Drawing.Size(449, 197);
+            this.Controls.Add(this.error_message_lb);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
@@ -167,5 +177,6 @@
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label error_message_lb;
     }
 }

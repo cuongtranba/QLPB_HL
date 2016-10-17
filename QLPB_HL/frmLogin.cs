@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model.ViewModel;
 using Service.Interfaces;
@@ -14,9 +16,11 @@ namespace QLPB_HL
             InitializeComponent();
         }
 
+    
         private async void btnOk_Click(object sender, EventArgs e)
         {
             this.btnOk.Enabled = false;
+            this.error_message_lb.Text = string.Empty;
             var result = await userService.Login(new LoginViewModel()
             {
                 UserName = txtUserName.Text,
@@ -26,6 +30,11 @@ namespace QLPB_HL
             if (result)
             {
                 this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                this.error_message_lb.Text = Resources.Message.UserIsValided;
+                this.error_message_lb.ForeColor = Color.Red;
             }
         }
 
