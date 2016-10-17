@@ -5,6 +5,7 @@ namespace QLPB_HL
 {
     public class FormFactory
     {
+        //test1
         readonly ILifetimeScope scope;
 
         public FormFactory(ILifetimeScope scope)

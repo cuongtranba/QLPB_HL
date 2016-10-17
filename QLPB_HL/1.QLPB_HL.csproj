@@ -193,6 +193,10 @@
     <None Include="Resources\system48.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\4.Helper\4.Helper.csproj">
+      <Project>{635fe390-7776-4012-adca-87fff09455b8}</Project>
+      <Name>4.Helper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\3.Model.csproj">
       <Project>{ec77de32-b955-453a-9818-d6a9e8bd8d23}</Project>
       <Name>3.Model</Name>
@@ -201,6 +205,9 @@
       <Project>{e43bfd95-c34f-469b-afbd-6666e0e922cc}</Project>
       <Name>2.Service</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
