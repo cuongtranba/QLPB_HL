@@ -53,13 +53,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Implements\BaseService.cs" />
+    <Compile Include="Implements\UserService.cs" />
+    <Compile Include="Interfaces\IUserService.cs" />
+    <Compile Include="ServiceModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\4.Helper\4.Helper.csproj">
+      <Project>{635fe390-7776-4012-adca-87fff09455b8}</Project>
+      <Name>4.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\3.Model.csproj">
+      <Project>{ec77de32-b955-453a-9818-d6a9e8bd8d23}</Project>
+      <Name>3.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

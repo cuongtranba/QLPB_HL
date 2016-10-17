@@ -61,6 +61,7 @@
       <DependentUpon>201610161641402_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="ORMModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tblDataAccVote.cs" />
     <Compile Include="tblIndexAccount.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="tblSysUserRight.cs" />
     <Compile Include="tblSysWorkingLock.cs" />
     <Compile Include="tblSysWorkingPeriod.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

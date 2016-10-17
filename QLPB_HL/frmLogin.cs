@@ -1,25 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Model.ViewModel;
+using Service.Interfaces;
 
 namespace QLPB_HL
 {
     public partial class frmLogin : Form
     {
-        public frmLogin()
+        private IUserService userService;
+        public frmLogin(IUserService userService)
         {
+            this.userService = userService;
             InitializeComponent();
         }
 
-        private void btnOk_Click(object sender, EventArgs e)
+        private async void btnOk_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            this.btnOk.Enabled = false;
+            var result = await userService.Login(new LoginViewModel()
+            {
+                UserName = txtUserName.Text,
+                Password = txtPassword.Text
+            });
+            this.btnOk.Enabled = true;
+            if (result)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
