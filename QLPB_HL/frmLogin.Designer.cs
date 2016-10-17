@@ -61,6 +61,7 @@
             // 
             // txtUserName
             // 
+            this.txtUserName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtUserName.Location = new System.Drawing.Point(238, 48);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(138, 20);
@@ -70,6 +71,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(238, 74);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(138, 20);
             this.txtPassword.TabIndex = 3;
             // 

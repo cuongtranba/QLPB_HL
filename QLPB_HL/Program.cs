@@ -25,6 +25,7 @@ namespace QLPB_HL
             if (loginForm.DialogResult == DialogResult.OK)
             {
                 var mainForm = formFactory.CreateForm<frmMidi>();
+                Global.clsVar.fMain = mainForm;
                 mainForm.ShowDialog();
             }
         }
