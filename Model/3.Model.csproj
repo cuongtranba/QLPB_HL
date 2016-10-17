@@ -60,6 +60,14 @@
     <Compile Include="Migrations\201610161641402_InitialCreate.Designer.cs">
       <DependentUpon>201610161641402_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610170425407_add-test-migration.cs" />
+    <Compile Include="Migrations\201610170425407_add-test-migration.Designer.cs">
+      <DependentUpon>201610170425407_add-test-migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610170426439_delete-testmigration.cs" />
+    <Compile Include="Migrations\201610170426439_delete-testmigration.Designer.cs">
+      <DependentUpon>201610170426439_delete-testmigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ORMModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,6 +112,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610161641402_InitialCreate.resx">
       <DependentUpon>201610161641402_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610170425407_add-test-migration.resx">
+      <DependentUpon>201610170425407_add-test-migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610170426439_delete-testmigration.resx">
+      <DependentUpon>201610170426439_delete-testmigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
