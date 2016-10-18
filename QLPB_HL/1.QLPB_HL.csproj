@@ -70,6 +70,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="FormFactory.cs" />
+    <Compile Include="frmDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDocument.Designer.cs">
+      <DependentUpon>frmDocument.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDocument.resx">
+      <DependentUpon>frmDocument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -212,6 +221,57 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Import_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Export_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-open_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sort-Descending-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventory-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PO_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Client list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clipboard-Folder-smooth-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money32_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wallet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Income.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payment-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sales.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Documents-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

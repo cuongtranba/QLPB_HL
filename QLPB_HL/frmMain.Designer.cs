@@ -31,25 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.mainTool = new System.Windows.Forms.ToolStrip();
             this.pnlKeToanL = new System.Windows.Forms.Panel();
-            this.button48 = new System.Windows.Forms.Button();
-            this.button47 = new System.Windows.Forms.Button();
-            this.button46 = new System.Windows.Forms.Button();
-            this.button45 = new System.Windows.Forms.Button();
-            this.button44 = new System.Windows.Forms.Button();
-            this.button43 = new System.Windows.Forms.Button();
-            this.button42 = new System.Windows.Forms.Button();
-            this.button41 = new System.Windows.Forms.Button();
-            this.btnKT1 = new System.Windows.Forms.Button();
             this.pnlVonTienL = new System.Windows.Forms.Panel();
-            this.btnVT9 = new System.Windows.Forms.Button();
-            this.btnVT8 = new System.Windows.Forms.Button();
-            this.btnVT7 = new System.Windows.Forms.Button();
-            this.btnVT6 = new System.Windows.Forms.Button();
-            this.btnVT5 = new System.Windows.Forms.Button();
-            this.btnVT4 = new System.Windows.Forms.Button();
-            this.btnVT3 = new System.Windows.Forms.Button();
-            this.btnVT2 = new System.Windows.Forms.Button();
-            this.btnVT1 = new System.Windows.Forms.Button();
             this.pnlCongNoL = new System.Windows.Forms.Panel();
             this.button24 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
@@ -62,15 +44,6 @@
             this.btnCN1 = new System.Windows.Forms.Button();
             this.pnlGiaThanhL = new System.Windows.Forms.Panel();
             this.pnlHangHoaL = new System.Windows.Forms.Panel();
-            this.button64 = new System.Windows.Forms.Button();
-            this.button63 = new System.Windows.Forms.Button();
-            this.button62 = new System.Windows.Forms.Button();
-            this.button61 = new System.Windows.Forms.Button();
-            this.button60 = new System.Windows.Forms.Button();
-            this.button59 = new System.Windows.Forms.Button();
-            this.button58 = new System.Windows.Forms.Button();
-            this.button57 = new System.Windows.Forms.Button();
-            this.btnHH1 = new System.Windows.Forms.Button();
             this.pnlTaiSanL = new System.Windows.Forms.Panel();
             this.button16 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
@@ -120,6 +93,14 @@
             this.mnuBaoCaoL = new System.Windows.Forms.ToolStripButton();
             this.mnuDanhMucL = new System.Windows.Forms.ToolStripButton();
             this.mnuHeThongL = new System.Windows.Forms.ToolStripButton();
+            this.btnVT8 = new System.Windows.Forms.Button();
+            this.btnVT7 = new System.Windows.Forms.Button();
+            this.btnVT6 = new System.Windows.Forms.Button();
+            this.btnVT5 = new System.Windows.Forms.Button();
+            this.btnVT4 = new System.Windows.Forms.Button();
+            this.btnVT3 = new System.Windows.Forms.Button();
+            this.btnVT2 = new System.Windows.Forms.Button();
+            this.btnVT1 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -129,6 +110,24 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnGT1 = new System.Windows.Forms.Button();
+            this.button48 = new System.Windows.Forms.Button();
+            this.button47 = new System.Windows.Forms.Button();
+            this.button46 = new System.Windows.Forms.Button();
+            this.button45 = new System.Windows.Forms.Button();
+            this.button44 = new System.Windows.Forms.Button();
+            this.button43 = new System.Windows.Forms.Button();
+            this.button42 = new System.Windows.Forms.Button();
+            this.button41 = new System.Windows.Forms.Button();
+            this.btnKT1 = new System.Windows.Forms.Button();
+            this.button64 = new System.Windows.Forms.Button();
+            this.button63 = new System.Windows.Forms.Button();
+            this.button62 = new System.Windows.Forms.Button();
+            this.button61 = new System.Windows.Forms.Button();
+            this.button60 = new System.Windows.Forms.Button();
+            this.button59 = new System.Windows.Forms.Button();
+            this.button58 = new System.Windows.Forms.Button();
+            this.button57 = new System.Windows.Forms.Button();
+            this.btnHH1 = new System.Windows.Forms.Button();
             this.mainTool.SuspendLayout();
             this.pnlKeToanL.SuspendLayout();
             this.pnlVonTienL.SuspendLayout();
@@ -182,155 +181,10 @@
             this.pnlKeToanL.Size = new System.Drawing.Size(747, 369);
             this.pnlKeToanL.TabIndex = 0;
             // 
-            // button48
-            // 
-            this.button48.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button48.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button48.Image = ((System.Drawing.Image)(resources.GetObject("button48.Image")));
-            this.button48.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button48.Location = new System.Drawing.Point(341, 153);
-            this.button48.Name = "button48";
-            this.button48.Size = new System.Drawing.Size(163, 69);
-            this.button48.TabIndex = 12;
-            this.button48.Text = "Kế toán";
-            this.button48.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button48.UseVisualStyleBackColor = true;
-            this.button48.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.button48.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // button47
-            // 
-            this.button47.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button47.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button47.Image = ((System.Drawing.Image)(resources.GetObject("button47.Image")));
-            this.button47.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button47.Location = new System.Drawing.Point(172, 153);
-            this.button47.Name = "button47";
-            this.button47.Size = new System.Drawing.Size(163, 69);
-            this.button47.TabIndex = 11;
-            this.button47.Text = "Kế toán";
-            this.button47.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button47.UseVisualStyleBackColor = true;
-            this.button47.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.button47.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // button46
-            // 
-            this.button46.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button46.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button46.Image = ((System.Drawing.Image)(resources.GetObject("button46.Image")));
-            this.button46.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button46.Location = new System.Drawing.Point(3, 153);
-            this.button46.Name = "button46";
-            this.button46.Size = new System.Drawing.Size(163, 69);
-            this.button46.TabIndex = 10;
-            this.button46.Text = "Kế toán";
-            this.button46.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button46.UseVisualStyleBackColor = true;
-            this.button46.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.button46.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // button45
-            // 
-            this.button45.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button45.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button45.Image = ((System.Drawing.Image)(resources.GetObject("button45.Image")));
-            this.button45.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button45.Location = new System.Drawing.Point(341, 78);
-            this.button45.Name = "button45";
-            this.button45.Size = new System.Drawing.Size(163, 69);
-            this.button45.TabIndex = 9;
-            this.button45.Text = "Kế toán";
-            this.button45.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button45.UseVisualStyleBackColor = true;
-            this.button45.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.button45.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // button44
-            // 
-            this.button44.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button44.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button44.Image = ((System.Drawing.Image)(resources.GetObject("button44.Image")));
-            this.button44.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button44.Location = new System.Drawing.Point(172, 78);
-            this.button44.Name = "button44";
-            this.button44.Size = new System.Drawing.Size(163, 69);
-            this.button44.TabIndex = 8;
-            this.button44.Text = "Kế toán";
-            this.button44.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button44.UseVisualStyleBackColor = true;
-            this.button44.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.button44.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // button43
-            // 
-            this.button43.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button43.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button43.Image = ((System.Drawing.Image)(resources.GetObject("button43.Image")));
-            this.button43.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button43.Location = new System.Drawing.Point(3, 78);
-            this.button43.Name = "button43";
-            this.button43.Size = new System.Drawing.Size(163, 69);
-            this.button43.TabIndex = 7;
-            this.button43.Text = "Kế toán";
-            this.button43.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button43.UseVisualStyleBackColor = true;
-            this.button43.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.button43.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // button42
-            // 
-            this.button42.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button42.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button42.Image = ((System.Drawing.Image)(resources.GetObject("button42.Image")));
-            this.button42.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button42.Location = new System.Drawing.Point(341, 3);
-            this.button42.Name = "button42";
-            this.button42.Size = new System.Drawing.Size(163, 69);
-            this.button42.TabIndex = 6;
-            this.button42.Text = "Kế toán";
-            this.button42.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button42.UseVisualStyleBackColor = true;
-            this.button42.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.button42.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // button41
-            // 
-            this.button41.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button41.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button41.Image = ((System.Drawing.Image)(resources.GetObject("button41.Image")));
-            this.button41.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button41.Location = new System.Drawing.Point(172, 3);
-            this.button41.Name = "button41";
-            this.button41.Size = new System.Drawing.Size(163, 69);
-            this.button41.TabIndex = 5;
-            this.button41.Text = "Kế toán";
-            this.button41.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button41.UseVisualStyleBackColor = true;
-            this.button41.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.button41.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // btnKT1
-            // 
-            this.btnKT1.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnKT1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKT1.Image = ((System.Drawing.Image)(resources.GetObject("btnKT1.Image")));
-            this.btnKT1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnKT1.Location = new System.Drawing.Point(3, 3);
-            this.btnKT1.Name = "btnKT1";
-            this.btnKT1.Size = new System.Drawing.Size(163, 69);
-            this.btnKT1.TabIndex = 4;
-            this.btnKT1.Text = "Kế toán";
-            this.btnKT1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnKT1.UseVisualStyleBackColor = true;
-            this.btnKT1.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.btnKT1.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
             // pnlVonTienL
             // 
             this.pnlVonTienL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlVonTienL.Controls.Add(this.btnVT9);
             this.pnlVonTienL.Controls.Add(this.btnVT8);
             this.pnlVonTienL.Controls.Add(this.btnVT7);
             this.pnlVonTienL.Controls.Add(this.btnVT6);
@@ -343,123 +197,6 @@
             this.pnlVonTienL.Name = "pnlVonTienL";
             this.pnlVonTienL.Size = new System.Drawing.Size(747, 369);
             this.pnlVonTienL.TabIndex = 1;
-            // 
-            // btnVT9
-            // 
-            this.btnVT9.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnVT9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVT9.Location = new System.Drawing.Point(341, 153);
-            this.btnVT9.Name = "btnVT9";
-            this.btnVT9.Size = new System.Drawing.Size(163, 69);
-            this.btnVT9.TabIndex = 11;
-            this.btnVT9.Text = "Vốn tiền";
-            this.btnVT9.UseVisualStyleBackColor = true;
-            this.btnVT9.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.btnVT9.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // btnVT8
-            // 
-            this.btnVT8.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnVT8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVT8.Location = new System.Drawing.Point(172, 153);
-            this.btnVT8.Name = "btnVT8";
-            this.btnVT8.Size = new System.Drawing.Size(163, 69);
-            this.btnVT8.TabIndex = 10;
-            this.btnVT8.Text = "Vốn tiền";
-            this.btnVT8.UseVisualStyleBackColor = true;
-            this.btnVT8.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.btnVT8.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // btnVT7
-            // 
-            this.btnVT7.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnVT7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVT7.Location = new System.Drawing.Point(3, 153);
-            this.btnVT7.Name = "btnVT7";
-            this.btnVT7.Size = new System.Drawing.Size(163, 69);
-            this.btnVT7.TabIndex = 9;
-            this.btnVT7.Text = "Vốn tiền";
-            this.btnVT7.UseVisualStyleBackColor = true;
-            this.btnVT7.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.btnVT7.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // btnVT6
-            // 
-            this.btnVT6.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnVT6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVT6.Location = new System.Drawing.Point(341, 78);
-            this.btnVT6.Name = "btnVT6";
-            this.btnVT6.Size = new System.Drawing.Size(163, 69);
-            this.btnVT6.TabIndex = 8;
-            this.btnVT6.Text = "Vốn tiền";
-            this.btnVT6.UseVisualStyleBackColor = true;
-            this.btnVT6.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.btnVT6.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // btnVT5
-            // 
-            this.btnVT5.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnVT5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVT5.Location = new System.Drawing.Point(172, 78);
-            this.btnVT5.Name = "btnVT5";
-            this.btnVT5.Size = new System.Drawing.Size(163, 69);
-            this.btnVT5.TabIndex = 7;
-            this.btnVT5.Text = "Vốn tiền";
-            this.btnVT5.UseVisualStyleBackColor = true;
-            this.btnVT5.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.btnVT5.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // btnVT4
-            // 
-            this.btnVT4.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnVT4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVT4.Location = new System.Drawing.Point(3, 78);
-            this.btnVT4.Name = "btnVT4";
-            this.btnVT4.Size = new System.Drawing.Size(163, 69);
-            this.btnVT4.TabIndex = 6;
-            this.btnVT4.Text = "Vốn tiền";
-            this.btnVT4.UseVisualStyleBackColor = true;
-            this.btnVT4.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.btnVT4.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // btnVT3
-            // 
-            this.btnVT3.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnVT3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVT3.Location = new System.Drawing.Point(341, 3);
-            this.btnVT3.Name = "btnVT3";
-            this.btnVT3.Size = new System.Drawing.Size(163, 69);
-            this.btnVT3.TabIndex = 5;
-            this.btnVT3.Text = "Vốn tiền";
-            this.btnVT3.UseVisualStyleBackColor = true;
-            this.btnVT3.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.btnVT3.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // btnVT2
-            // 
-            this.btnVT2.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnVT2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVT2.Location = new System.Drawing.Point(172, 3);
-            this.btnVT2.Name = "btnVT2";
-            this.btnVT2.Size = new System.Drawing.Size(163, 69);
-            this.btnVT2.TabIndex = 4;
-            this.btnVT2.Text = "Vốn tiền";
-            this.btnVT2.UseVisualStyleBackColor = true;
-            this.btnVT2.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.btnVT2.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // btnVT1
-            // 
-            this.btnVT1.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnVT1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVT1.Location = new System.Drawing.Point(3, 3);
-            this.btnVT1.Name = "btnVT1";
-            this.btnVT1.Size = new System.Drawing.Size(163, 69);
-            this.btnVT1.TabIndex = 3;
-            this.btnVT1.Text = "Vốn tiền";
-            this.btnVT1.UseVisualStyleBackColor = true;
-            this.btnVT1.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.btnVT1.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // pnlCongNoL
             // 
@@ -631,123 +368,6 @@
             this.pnlHangHoaL.Name = "pnlHangHoaL";
             this.pnlHangHoaL.Size = new System.Drawing.Size(747, 369);
             this.pnlHangHoaL.TabIndex = 3;
-            // 
-            // button64
-            // 
-            this.button64.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button64.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button64.Location = new System.Drawing.Point(341, 153);
-            this.button64.Name = "button64";
-            this.button64.Size = new System.Drawing.Size(163, 69);
-            this.button64.TabIndex = 9;
-            this.button64.Text = "Hàng hóa";
-            this.button64.UseVisualStyleBackColor = true;
-            this.button64.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.button64.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // button63
-            // 
-            this.button63.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button63.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button63.Location = new System.Drawing.Point(172, 153);
-            this.button63.Name = "button63";
-            this.button63.Size = new System.Drawing.Size(163, 69);
-            this.button63.TabIndex = 8;
-            this.button63.Text = "Hàng hóa";
-            this.button63.UseVisualStyleBackColor = true;
-            this.button63.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.button63.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // button62
-            // 
-            this.button62.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button62.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button62.Location = new System.Drawing.Point(3, 153);
-            this.button62.Name = "button62";
-            this.button62.Size = new System.Drawing.Size(163, 69);
-            this.button62.TabIndex = 7;
-            this.button62.Text = "Hàng hóa";
-            this.button62.UseVisualStyleBackColor = true;
-            this.button62.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.button62.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // button61
-            // 
-            this.button61.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button61.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button61.Location = new System.Drawing.Point(341, 78);
-            this.button61.Name = "button61";
-            this.button61.Size = new System.Drawing.Size(163, 69);
-            this.button61.TabIndex = 6;
-            this.button61.Text = "Hàng hóa";
-            this.button61.UseVisualStyleBackColor = true;
-            this.button61.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.button61.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // button60
-            // 
-            this.button60.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button60.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button60.Location = new System.Drawing.Point(172, 78);
-            this.button60.Name = "button60";
-            this.button60.Size = new System.Drawing.Size(163, 69);
-            this.button60.TabIndex = 5;
-            this.button60.Text = "Hàng hóa";
-            this.button60.UseVisualStyleBackColor = true;
-            this.button60.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.button60.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // button59
-            // 
-            this.button59.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button59.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button59.Location = new System.Drawing.Point(3, 78);
-            this.button59.Name = "button59";
-            this.button59.Size = new System.Drawing.Size(163, 69);
-            this.button59.TabIndex = 4;
-            this.button59.Text = "Hàng hóa";
-            this.button59.UseVisualStyleBackColor = true;
-            this.button59.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.button59.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // button58
-            // 
-            this.button58.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button58.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button58.Location = new System.Drawing.Point(341, 3);
-            this.button58.Name = "button58";
-            this.button58.Size = new System.Drawing.Size(163, 69);
-            this.button58.TabIndex = 3;
-            this.button58.Text = "Hàng hóa";
-            this.button58.UseVisualStyleBackColor = true;
-            this.button58.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.button58.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // button57
-            // 
-            this.button57.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button57.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button57.Location = new System.Drawing.Point(172, 3);
-            this.button57.Name = "button57";
-            this.button57.Size = new System.Drawing.Size(163, 69);
-            this.button57.TabIndex = 2;
-            this.button57.Text = "Hàng hóa";
-            this.button57.UseVisualStyleBackColor = true;
-            this.button57.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.button57.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
-            // 
-            // btnHH1
-            // 
-            this.btnHH1.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnHH1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHH1.Location = new System.Drawing.Point(3, 3);
-            this.btnHH1.Name = "btnHH1";
-            this.btnHH1.Size = new System.Drawing.Size(163, 69);
-            this.btnHH1.TabIndex = 1;
-            this.btnHH1.Text = "Hàng hóa";
-            this.btnHH1.UseVisualStyleBackColor = true;
-            this.btnHH1.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
-            this.btnHH1.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
             // pnlTaiSanL
             // 
@@ -1390,6 +1010,134 @@
             this.mnuHeThongL.Text = " Hệ thống";
             this.mnuHeThongL.Click += new System.EventHandler(this.mnuKeToanL_Click);
             // 
+            // btnVT8
+            // 
+            this.btnVT8.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnVT8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVT8.Image = global::QLPB_HL.Properties.Resources.dollar;
+            this.btnVT8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVT8.Location = new System.Drawing.Point(172, 153);
+            this.btnVT8.Name = "btnVT8";
+            this.btnVT8.Size = new System.Drawing.Size(163, 69);
+            this.btnVT8.TabIndex = 10;
+            this.btnVT8.Text = "Tiền gửi NH";
+            this.btnVT8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVT8.UseVisualStyleBackColor = true;
+            this.btnVT8.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnVT8.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // btnVT7
+            // 
+            this.btnVT7.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnVT7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVT7.Image = global::QLPB_HL.Properties.Resources.bank32;
+            this.btnVT7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVT7.Location = new System.Drawing.Point(3, 153);
+            this.btnVT7.Name = "btnVT7";
+            this.btnVT7.Size = new System.Drawing.Size(163, 69);
+            this.btnVT7.TabIndex = 9;
+            this.btnVT7.Text = "Tiền vay NH";
+            this.btnVT7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVT7.UseVisualStyleBackColor = true;
+            this.btnVT7.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnVT7.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // btnVT6
+            // 
+            this.btnVT6.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnVT6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVT6.Image = global::QLPB_HL.Properties.Resources.wallet;
+            this.btnVT6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVT6.Location = new System.Drawing.Point(341, 78);
+            this.btnVT6.Name = "btnVT6";
+            this.btnVT6.Size = new System.Drawing.Size(163, 69);
+            this.btnVT6.TabIndex = 8;
+            this.btnVT6.Text = "Chi phí";
+            this.btnVT6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVT6.UseVisualStyleBackColor = true;
+            this.btnVT6.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnVT6.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // btnVT5
+            // 
+            this.btnVT5.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnVT5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVT5.Image = global::QLPB_HL.Properties.Resources.payment_icon;
+            this.btnVT5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVT5.Location = new System.Drawing.Point(172, 78);
+            this.btnVT5.Name = "btnVT5";
+            this.btnVT5.Size = new System.Drawing.Size(163, 69);
+            this.btnVT5.TabIndex = 7;
+            this.btnVT5.Text = "Công nợ phải trả";
+            this.btnVT5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVT5.UseVisualStyleBackColor = true;
+            this.btnVT5.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnVT5.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // btnVT4
+            // 
+            this.btnVT4.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnVT4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVT4.Image = global::QLPB_HL.Properties.Resources.Income;
+            this.btnVT4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVT4.Location = new System.Drawing.Point(3, 78);
+            this.btnVT4.Name = "btnVT4";
+            this.btnVT4.Size = new System.Drawing.Size(163, 69);
+            this.btnVT4.TabIndex = 6;
+            this.btnVT4.Text = "Công nợ phải thu";
+            this.btnVT4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVT4.UseVisualStyleBackColor = true;
+            this.btnVT4.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnVT4.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // btnVT3
+            // 
+            this.btnVT3.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnVT3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVT3.Image = global::QLPB_HL.Properties.Resources.money32_;
+            this.btnVT3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVT3.Location = new System.Drawing.Point(341, 3);
+            this.btnVT3.Name = "btnVT3";
+            this.btnVT3.Size = new System.Drawing.Size(163, 69);
+            this.btnVT3.TabIndex = 5;
+            this.btnVT3.Text = "Quỹ tiền mặt";
+            this.btnVT3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVT3.UseVisualStyleBackColor = true;
+            this.btnVT3.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnVT3.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // btnVT2
+            // 
+            this.btnVT2.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnVT2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVT2.Image = global::QLPB_HL.Properties.Resources.Sales;
+            this.btnVT2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVT2.Location = new System.Drawing.Point(172, 3);
+            this.btnVT2.Name = "btnVT2";
+            this.btnVT2.Size = new System.Drawing.Size(163, 69);
+            this.btnVT2.TabIndex = 4;
+            this.btnVT2.Text = "Phiếu chi";
+            this.btnVT2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVT2.UseVisualStyleBackColor = true;
+            this.btnVT2.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnVT2.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // btnVT1
+            // 
+            this.btnVT1.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnVT1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVT1.Image = global::QLPB_HL.Properties.Resources.Documents_icon;
+            this.btnVT1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVT1.Location = new System.Drawing.Point(3, 3);
+            this.btnVT1.Name = "btnVT1";
+            this.btnVT1.Size = new System.Drawing.Size(163, 69);
+            this.btnVT1.TabIndex = 3;
+            this.btnVT1.Text = "Phiếu thu";
+            this.btnVT1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVT1.UseVisualStyleBackColor = true;
+            this.btnVT1.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnVT1.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
             // button8
             // 
             this.button8.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
@@ -1534,6 +1282,295 @@
             this.btnGT1.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
             this.btnGT1.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
+            // button48
+            // 
+            this.button48.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button48.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button48.Image = ((System.Drawing.Image)(resources.GetObject("button48.Image")));
+            this.button48.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button48.Location = new System.Drawing.Point(341, 153);
+            this.button48.Name = "button48";
+            this.button48.Size = new System.Drawing.Size(163, 69);
+            this.button48.TabIndex = 12;
+            this.button48.Text = "Kế toán";
+            this.button48.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button48.UseVisualStyleBackColor = true;
+            this.button48.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.button48.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // button47
+            // 
+            this.button47.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button47.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button47.Image = ((System.Drawing.Image)(resources.GetObject("button47.Image")));
+            this.button47.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button47.Location = new System.Drawing.Point(172, 153);
+            this.button47.Name = "button47";
+            this.button47.Size = new System.Drawing.Size(163, 69);
+            this.button47.TabIndex = 11;
+            this.button47.Text = "Kế toán";
+            this.button47.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button47.UseVisualStyleBackColor = true;
+            this.button47.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.button47.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // button46
+            // 
+            this.button46.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button46.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button46.Image = ((System.Drawing.Image)(resources.GetObject("button46.Image")));
+            this.button46.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button46.Location = new System.Drawing.Point(3, 153);
+            this.button46.Name = "button46";
+            this.button46.Size = new System.Drawing.Size(163, 69);
+            this.button46.TabIndex = 10;
+            this.button46.Text = "Kế toán";
+            this.button46.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button46.UseVisualStyleBackColor = true;
+            this.button46.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.button46.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // button45
+            // 
+            this.button45.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button45.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button45.Image = ((System.Drawing.Image)(resources.GetObject("button45.Image")));
+            this.button45.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button45.Location = new System.Drawing.Point(341, 78);
+            this.button45.Name = "button45";
+            this.button45.Size = new System.Drawing.Size(163, 69);
+            this.button45.TabIndex = 9;
+            this.button45.Text = "Kế toán";
+            this.button45.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button45.UseVisualStyleBackColor = true;
+            this.button45.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.button45.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // button44
+            // 
+            this.button44.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button44.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button44.Image = ((System.Drawing.Image)(resources.GetObject("button44.Image")));
+            this.button44.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button44.Location = new System.Drawing.Point(172, 78);
+            this.button44.Name = "button44";
+            this.button44.Size = new System.Drawing.Size(163, 69);
+            this.button44.TabIndex = 8;
+            this.button44.Text = "Kế toán";
+            this.button44.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button44.UseVisualStyleBackColor = true;
+            this.button44.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.button44.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // button43
+            // 
+            this.button43.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button43.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button43.Image = ((System.Drawing.Image)(resources.GetObject("button43.Image")));
+            this.button43.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button43.Location = new System.Drawing.Point(3, 78);
+            this.button43.Name = "button43";
+            this.button43.Size = new System.Drawing.Size(163, 69);
+            this.button43.TabIndex = 7;
+            this.button43.Text = "Kế toán";
+            this.button43.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button43.UseVisualStyleBackColor = true;
+            this.button43.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.button43.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // button42
+            // 
+            this.button42.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button42.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button42.Image = ((System.Drawing.Image)(resources.GetObject("button42.Image")));
+            this.button42.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button42.Location = new System.Drawing.Point(341, 3);
+            this.button42.Name = "button42";
+            this.button42.Size = new System.Drawing.Size(163, 69);
+            this.button42.TabIndex = 6;
+            this.button42.Text = "Kế toán";
+            this.button42.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button42.UseVisualStyleBackColor = true;
+            this.button42.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.button42.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // button41
+            // 
+            this.button41.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button41.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button41.Image = ((System.Drawing.Image)(resources.GetObject("button41.Image")));
+            this.button41.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button41.Location = new System.Drawing.Point(172, 3);
+            this.button41.Name = "button41";
+            this.button41.Size = new System.Drawing.Size(163, 69);
+            this.button41.TabIndex = 5;
+            this.button41.Text = "Kế toán";
+            this.button41.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button41.UseVisualStyleBackColor = true;
+            this.button41.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.button41.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // btnKT1
+            // 
+            this.btnKT1.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnKT1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKT1.Image = ((System.Drawing.Image)(resources.GetObject("btnKT1.Image")));
+            this.btnKT1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnKT1.Location = new System.Drawing.Point(3, 3);
+            this.btnKT1.Name = "btnKT1";
+            this.btnKT1.Size = new System.Drawing.Size(163, 69);
+            this.btnKT1.TabIndex = 4;
+            this.btnKT1.Text = "Kế toán";
+            this.btnKT1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnKT1.UseVisualStyleBackColor = true;
+            this.btnKT1.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnKT1.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // button64
+            // 
+            this.button64.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button64.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button64.Image = global::QLPB_HL.Properties.Resources.document_open_32;
+            this.button64.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button64.Location = new System.Drawing.Point(341, 153);
+            this.button64.Name = "button64";
+            this.button64.Size = new System.Drawing.Size(163, 69);
+            this.button64.TabIndex = 9;
+            this.button64.Text = "Báo cáo kho tổng hợp";
+            this.button64.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button64.UseVisualStyleBackColor = true;
+            this.button64.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.button64.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // button63
+            // 
+            this.button63.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button63.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button63.Image = global::QLPB_HL.Properties.Resources.inventory_32;
+            this.button63.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button63.Location = new System.Drawing.Point(172, 153);
+            this.button63.Name = "button63";
+            this.button63.Size = new System.Drawing.Size(163, 69);
+            this.button63.TabIndex = 8;
+            this.button63.Text = "Tồn kho cuối kỳ";
+            this.button63.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button63.UseVisualStyleBackColor = true;
+            this.button63.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.button63.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // button62
+            // 
+            this.button62.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button62.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button62.Image = global::QLPB_HL.Properties.Resources.Sort_Descending_32;
+            this.button62.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button62.Location = new System.Drawing.Point(3, 153);
+            this.button62.Name = "button62";
+            this.button62.Size = new System.Drawing.Size(163, 69);
+            this.button62.TabIndex = 7;
+            this.button62.Text = "Số dư đầu kỳ";
+            this.button62.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button62.UseVisualStyleBackColor = true;
+            this.button62.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.button62.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // button61
+            // 
+            this.button61.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button61.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button61.Image = global::QLPB_HL.Properties.Resources.Client_list;
+            this.button61.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button61.Location = new System.Drawing.Point(341, 78);
+            this.button61.Name = "button61";
+            this.button61.Size = new System.Drawing.Size(163, 69);
+            this.button61.TabIndex = 6;
+            this.button61.Text = "Sổ chi tiết khách hàng";
+            this.button61.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button61.UseVisualStyleBackColor = true;
+            this.button61.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.button61.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // button60
+            // 
+            this.button60.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button60.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button60.Image = global::QLPB_HL.Properties.Resources.PO_32;
+            this.button60.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button60.Location = new System.Drawing.Point(172, 78);
+            this.button60.Name = "button60";
+            this.button60.Size = new System.Drawing.Size(163, 69);
+            this.button60.TabIndex = 5;
+            this.button60.Text = "Nhật ký bán hàng";
+            this.button60.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button60.UseVisualStyleBackColor = true;
+            this.button60.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.button60.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // button59
+            // 
+            this.button59.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button59.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button59.Image = global::QLPB_HL.Properties.Resources.Export_32;
+            this.button59.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button59.Location = new System.Drawing.Point(3, 78);
+            this.button59.Name = "button59";
+            this.button59.Size = new System.Drawing.Size(163, 69);
+            this.button59.TabIndex = 4;
+            this.button59.Text = "Phiếu xuất";
+            this.button59.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button59.UseVisualStyleBackColor = true;
+            this.button59.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.button59.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // button58
+            // 
+            this.button58.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button58.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button58.Image = global::QLPB_HL.Properties.Resources.Clipboard_Folder_smooth_icon;
+            this.button58.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button58.Location = new System.Drawing.Point(341, 3);
+            this.button58.Name = "button58";
+            this.button58.Size = new System.Drawing.Size(163, 69);
+            this.button58.TabIndex = 3;
+            this.button58.Text = "Sổ kho, thẻ kho";
+            this.button58.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button58.UseVisualStyleBackColor = true;
+            this.button58.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.button58.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // button57
+            // 
+            this.button57.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button57.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button57.Image = global::QLPB_HL.Properties.Resources.Modify;
+            this.button57.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button57.Location = new System.Drawing.Point(172, 3);
+            this.button57.Name = "button57";
+            this.button57.Size = new System.Drawing.Size(163, 69);
+            this.button57.TabIndex = 2;
+            this.button57.Text = "Nhật ký mua hàng";
+            this.button57.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button57.UseVisualStyleBackColor = true;
+            this.button57.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.button57.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
+            // btnHH1
+            // 
+            this.btnHH1.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHH1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHH1.Image = global::QLPB_HL.Properties.Resources.Import_32;
+            this.btnHH1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHH1.Location = new System.Drawing.Point(3, 3);
+            this.btnHH1.Name = "btnHH1";
+            this.btnHH1.Size = new System.Drawing.Size(163, 69);
+            this.btnHH1.TabIndex = 1;
+            this.btnHH1.Text = "Phiếu nhập";
+            this.btnHH1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHH1.UseVisualStyleBackColor = true;
+            this.btnHH1.Click += new System.EventHandler(this.btnHH1_Click);
+            this.btnHH1.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+            this.btnHH1.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1602,7 +1639,6 @@
         private System.Windows.Forms.Button btnVT1;
         private System.Windows.Forms.Panel pnlKeToanL;
         private System.Windows.Forms.Button btnKT1;
-        private System.Windows.Forms.Button btnVT9;
         private System.Windows.Forms.Button btnVT8;
         private System.Windows.Forms.Button btnVT7;
         private System.Windows.Forms.Button btnVT6;

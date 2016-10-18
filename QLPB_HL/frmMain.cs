@@ -79,5 +79,10 @@ namespace QLPB_HL
         {
             mnuKeToanL.PerformClick();
         }
+
+        private void btnHH1_Click(object sender, EventArgs e)
+        {
+            //Phiếu nhập
+        }
     }
 }

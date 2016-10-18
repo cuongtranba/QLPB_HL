@@ -24,7 +24,7 @@ namespace QLPB_HL
             var result = await userService.Login(new LoginViewModel()
             {
                 UserName = txtUserName.Text,
-                Password = txtPassword.Text
+                Password = userService.md5(txtPassword.Text)
             });
             this.btnOk.Enabled = true;
             if (result)
@@ -41,6 +41,11 @@ namespace QLPB_HL
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
