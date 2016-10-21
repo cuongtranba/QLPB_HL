@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model.ViewModel;
 using Service.Interfaces;
+using _4.Helper;
 
 namespace QLPB_HL
 {
@@ -25,7 +26,7 @@ namespace QLPB_HL
             var result = await userService.Login(new LoginViewModel()
             {
                 UserName = txtUserName.Text,
-                Password = txtPassword.Text
+                Password = txtPassword.Text.ToMD5()
             });
             this.btnOk.Enabled = true;
             btnOk.Image = null;
@@ -43,6 +44,11 @@ namespace QLPB_HL
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

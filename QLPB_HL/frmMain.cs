@@ -111,5 +111,14 @@ namespace QLPB_HL
         {
             mnuKeToanL.PerformClick();
         }
+
+        private void btnHH1_Click(object sender, EventArgs e)
+        {
+            //Phiếu nhập
+            //var frmDocument = FormFactory.CreateForm<frmDocument>();
+            //frmDocument.MdiParent = Global.clsVar.fMain;
+            //frmDocument.Text = ((Button)sender).Text;
+            //frmDocument.Show();
+        }
     }
 }
