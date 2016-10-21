@@ -9,13 +9,14 @@ namespace QLPB_HL
 {
     static class Program
     {
+        public static IContainer container;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            var container = RegisterIOC();
+            container = RegisterIOC();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.DoEvents();

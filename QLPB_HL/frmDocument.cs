@@ -12,9 +12,16 @@ namespace QLPB_HL
 {
     public partial class frmDocument : Form
     {
+        private string sDocumentType = "PN";
+        public string sDocumentCode = "001";
         public frmDocument()
         {
             InitializeComponent();
+        }
+
+        private void frmDocument_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

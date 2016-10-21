@@ -6,7 +6,8 @@ namespace Service
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterAssemblyTypes(ThisAssembly).Where(c => c.Name.EndsWith("Service")).AsImplementedInterfaces().PropertiesAutowired().InstancePerMatchingLifetimeScope("FormScope");
+            builder.RegisterAssemblyTypes(ThisAssembly).Where(c => c.Name.EndsWith("Service"))
+                .AsImplementedInterfaces().PropertiesAutowired().InstancePerMatchingLifetimeScope("FormScope");
             base.Load(builder);
         }
     }

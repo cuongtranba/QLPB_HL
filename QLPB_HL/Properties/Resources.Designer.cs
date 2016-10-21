@@ -83,6 +83,16 @@ namespace QLPB_HL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add16 {
+            get {
+                object obj = ResourceManager.GetObject("add16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap App_login_manager_icon {
             get {
                 object obj = ResourceManager.GetObject("App-login-manager-icon", resourceCulture);
@@ -143,6 +153,16 @@ namespace QLPB_HL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cancel16 {
+            get {
+                object obj = ResourceManager.GetObject("cancel16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Client_list {
             get {
                 object obj = ResourceManager.GetObject("Client list", resourceCulture);
@@ -156,6 +176,16 @@ namespace QLPB_HL.Properties {
         internal static System.Drawing.Bitmap Clipboard_Folder_smooth_icon {
             get {
                 object obj = ResourceManager.GetObject("Clipboard-Folder-smooth-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete_icon16 {
+            get {
+                object obj = ResourceManager.GetObject("delete-icon16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +216,16 @@ namespace QLPB_HL.Properties {
         internal static System.Drawing.Bitmap dollar {
             get {
                 object obj = ResourceManager.GetObject("dollar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit16 {
+            get {
+                object obj = ResourceManager.GetObject("edit16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,6 +393,16 @@ namespace QLPB_HL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Print_16 {
+            get {
+                object obj = ResourceManager.GetObject("Print-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap report32 {
             get {
                 object obj = ResourceManager.GetObject("report32", resourceCulture);
@@ -376,6 +426,16 @@ namespace QLPB_HL.Properties {
         internal static System.Drawing.Bitmap Sales {
             get {
                 object obj = ResourceManager.GetObject("Sales", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save16 {
+            get {
+                object obj = ResourceManager.GetObject("save16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
