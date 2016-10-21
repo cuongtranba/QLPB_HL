@@ -1,25 +1,27 @@
+﻿using System.ComponentModel;
+
 namespace Model
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("tblIndexItem")]
     public partial class tblIndexItem
     {
         [Key]
         [StringLength(50)]
+        [DisplayName("Mã")]
         public string KeyAutoID { get; set; }
 
         [StringLength(50)]
         public string ItemID { get; set; }
 
         [StringLength(150)]
+        [DisplayName(@"Tên Hàng")]
         public string ItemName { get; set; }
 
         [StringLength(50)]
+        [DisplayName(@"Đơn vị tính")]
         public string UnitID { get; set; }
 
         [StringLength(50)]
@@ -37,12 +39,13 @@ namespace Model
         public double? UnitRate1 { get; set; }
 
         public double? UnitRate2 { get; set; }
-
+        [DisplayName("Giá mua")]
         public double? BuyPrice { get; set; }
-
+        [DisplayName("Giá bán")]
         public double? SalePrice { get; set; }
 
         [StringLength(150)]
+        [DisplayName(@"Ghi chú")]
         public string Note { get; set; }
 
         public bool? isSelected { get; set; }

@@ -47,6 +47,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ViewModel\ControlViewModel.cs" />
     <Compile Include="HongLienDb.cs" />
     <Compile Include="Migrations\201610161641402_InitialCreate.cs" />
     <Compile Include="Migrations\201610161641402_InitialCreate.Designer.cs">
@@ -103,7 +105,10 @@
     <Compile Include="tblSysUserRight.cs" />
     <Compile Include="tblSysWorkingLock.cs" />
     <Compile Include="tblSysWorkingPeriod.cs" />
+    <Compile Include="ViewModel\GridViewHeaderViewModel.cs" />
+    <Compile Include="ViewModel\ItemViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\SearchItemViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -119,6 +124,12 @@
     <EmbeddedResource Include="Migrations\201610170426439_delete-testmigration.resx">
       <DependentUpon>201610170426439_delete-testmigration.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\4.Helper\4.Helper.csproj">
+      <Project>{635fe390-7776-4012-adca-87fff09455b8}</Project>
+      <Name>4.Helper</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

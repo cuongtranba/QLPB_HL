@@ -19,7 +19,7 @@ namespace QLPB_HL
 
         private void frmMidi_Load(object sender, EventArgs e)
         {
-            frmMain f = new frmMain();
+            var f = FormFactory.CreateForm<frmMain>();
             f.MdiParent = Global.clsVar.fMain;
             //f.ClientSize = new System.Drawing.Size(iWidth, iHeight);
             f.Dock = DockStyle.Fill;

@@ -30,16 +30,16 @@
         {
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.mnuHeThong = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDanhMuc = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHangHoa = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuVonTien = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuCongNo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTaiSan = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuGiaThanh = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuBaoCao = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuKeToan = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuVonTien = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCongNo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuBaoCao = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuHeThong = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,20 +69,6 @@
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1150, 25);
-            this.toolStrip1.TabIndex = 3;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // mnuHeThong
-            // 
-            this.mnuHeThong.Name = "mnuHeThong";
-            this.mnuHeThong.Size = new System.Drawing.Size(69, 20);
-            this.mnuHeThong.Text = "Hệ thống";
-            // 
             // mnuDanhMuc
             // 
             this.mnuDanhMuc.Name = "mnuDanhMuc";
@@ -94,6 +80,24 @@
             this.mnuHangHoa.Name = "mnuHangHoa";
             this.mnuHangHoa.Size = new System.Drawing.Size(71, 20);
             this.mnuHangHoa.Text = "Hàng hóa";
+            // 
+            // mnuTaiSan
+            // 
+            this.mnuTaiSan.Name = "mnuTaiSan";
+            this.mnuTaiSan.Size = new System.Drawing.Size(55, 20);
+            this.mnuTaiSan.Text = "Tài sản";
+            // 
+            // mnuGiaThanh
+            // 
+            this.mnuGiaThanh.Name = "mnuGiaThanh";
+            this.mnuGiaThanh.Size = new System.Drawing.Size(70, 20);
+            this.mnuGiaThanh.Text = "Giá thành";
+            // 
+            // mnuKeToan
+            // 
+            this.mnuKeToan.Name = "mnuKeToan";
+            this.mnuKeToan.Size = new System.Drawing.Size(59, 20);
+            this.mnuKeToan.Text = "Kế toán";
             // 
             // mnuVonTien
             // 
@@ -107,29 +111,25 @@
             this.mnuCongNo.Size = new System.Drawing.Size(65, 20);
             this.mnuCongNo.Text = "Công nợ";
             // 
-            // mnuTaiSan
-            // 
-            this.mnuTaiSan.Name = "mnuTaiSan";
-            this.mnuTaiSan.Size = new System.Drawing.Size(56, 20);
-            this.mnuTaiSan.Text = "Tài sản";
-            // 
-            // mnuGiaThanh
-            // 
-            this.mnuGiaThanh.Name = "mnuGiaThanh";
-            this.mnuGiaThanh.Size = new System.Drawing.Size(70, 20);
-            this.mnuGiaThanh.Text = "Giá thành";
-            // 
             // mnuBaoCao
             // 
             this.mnuBaoCao.Name = "mnuBaoCao";
             this.mnuBaoCao.Size = new System.Drawing.Size(61, 20);
             this.mnuBaoCao.Text = "Báo cáo";
             // 
-            // mnuKeToan
+            // mnuHeThong
             // 
-            this.mnuKeToan.Name = "mnuKeToan";
-            this.mnuKeToan.Size = new System.Drawing.Size(59, 20);
-            this.mnuKeToan.Text = "Kế toán";
+            this.mnuHeThong.Name = "mnuHeThong";
+            this.mnuHeThong.Size = new System.Drawing.Size(69, 20);
+            this.mnuHeThong.Text = "Hệ thống";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1150, 25);
+            this.toolStrip1.TabIndex = 3;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // frmMidi
             // 

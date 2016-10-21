@@ -2,32 +2,44 @@
 using System.Reflection;
 using System.Windows.Forms;
 using Autofac;
+using AutoMapper;
 using Model;
+using Model.ViewModel;
 using Service;
 
 namespace QLPB_HL
 {
     static class Program
     {
+        public static IContainer Container;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            var container = RegisterIOC();
+            Container = RegisterIOC();
+            RegisterAutoMapper();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.DoEvents();
-            var formFactory = new FormFactory(container);
-            var loginForm = formFactory.CreateForm<frmLogin>();
+            var loginForm = FormFactory.CreateForm<frmLogin>();
             loginForm.ShowDialog();
             if (loginForm.DialogResult == DialogResult.OK)
             {
-                var mainForm = formFactory.CreateForm<frmMidi>();
+                var mainForm = FormFactory.CreateForm<frmMidi>();
                 Global.clsVar.fMain = mainForm;
                 mainForm.ShowDialog();
             }
+        }
+
+        private static void RegisterAutoMapper()
+        {
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<tblIndexItem, ItemViewModel>();
+            });
         }
 
         private static IContainer RegisterIOC()

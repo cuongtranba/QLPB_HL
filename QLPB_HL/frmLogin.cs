@@ -19,6 +19,7 @@ namespace QLPB_HL
     
         private async void btnOk_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             this.btnOk.Enabled = false;
             this.error_message_lb.Text = string.Empty;
             var result = await userService.Login(new LoginViewModel()
@@ -27,6 +28,7 @@ namespace QLPB_HL
                 Password = txtPassword.Text
             });
             this.btnOk.Enabled = true;
+            btnOk.Image = null;
             if (result)
             {
                 this.DialogResult = DialogResult.OK;

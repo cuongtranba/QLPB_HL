@@ -3,23 +3,11 @@ using Autofac;
 
 namespace QLPB_HL
 {
-    public class FormFactory
+    public static class FormFactory
     {
-        //test1
-        //test2
-        //test32
-        //test44
-        //test33
-        readonly ILifetimeScope scope;
-
-        public FormFactory(ILifetimeScope scope)
+        public static TForm CreateForm<TForm>() where TForm : Form
         {
-            this.scope = scope;
-        }
-
-        public TForm CreateForm<TForm>() where TForm : Form
-        {
-            var formScope = scope.BeginLifetimeScope("FormScope");
+            var formScope = Program.Container.BeginLifetimeScope("FormScope");
             var form = formScope.Resolve<TForm>();
             form.Closed += (s, e) => formScope.Dispose();
             return form;

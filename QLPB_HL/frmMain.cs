@@ -13,6 +13,10 @@ namespace QLPB_HL
     public partial class frmMain : Form
     {
         string sImageAlign = "C";
+        List<string> ButtonDanhMucHangHoa = new List<string>()
+        {
+            "Danh mục hàng hóa","Danh mục kho","Danh mục bốc xếp","Danh mục phương tiện","Danh mục khách hàng","Danh mục tài khoản","Danh mục chi phí","Lý do nhập xuất","Danh mục"
+        };
         public frmMain()
         {
             InitializeComponent();
@@ -26,24 +30,52 @@ namespace QLPB_HL
             }
             ToolStripButton btn = sender as ToolStripButton;
             ShowPanel(btn.Name);
+            HandleDanhMucHangHoa(btn.Name, ButtonDanhMucHangHoa);
             btn.Checked = true;
+        }
+
+        private void HandleDanhMucHangHoa(string btnName, List<string> buttonDanhMucHangHoa)
+        {
+            var panel = this.Controls.OfType<Panel>().FirstOrDefault(c => c.Name.Contains(btnName.Substring(3)));
+            if (panel != null)
+            {
+                var panelButtons = panel.Controls.OfType<Button>().ToList();
+                panelButtons.ForEach(button =>
+                {
+                    if (buttonDanhMucHangHoa.Contains(button.Text))
+                    {
+                        button.Click += Button_Click;
+                    }
+                });
+            }
+        }
+
+        private void Button_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            var formDanhMuc = FormFactory.CreateForm<frmDanhMuc>();
+            formDanhMuc.MdiParent = Global.clsVar.fMain;
+            formDanhMuc.Text = ((Button) sender).Text;
+            
+            formDanhMuc.Show();
         }
 
         private void ShowPanel(string spanel)
         {
-            foreach(Control pnl in this.Controls)
+            foreach (Control pnl in this.Controls)
             {
                 try
                 {
-                    if(pnl.GetType().ToString().Contains("Panel"))
+                    if (pnl.GetType().ToString().Contains("Panel"))
                     {
                         pnl.Visible = false;
                         if (pnl.Name.Contains(spanel.Substring(3)))
                             pnl.Visible = true;
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
+
                 }
             }
         }

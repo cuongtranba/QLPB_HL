@@ -6,7 +6,7 @@ namespace Model
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.Register(c => new HongLienDb()).AsSelf().InstancePerMatchingLifetimeScope("FormScope");
+            builder.Register(c => new HongLienDb()).AsSelf().SingleInstance();
             base.Load(builder);
         }
     }
