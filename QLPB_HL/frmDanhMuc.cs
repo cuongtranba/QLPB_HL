@@ -44,12 +44,6 @@ namespace QLPB_HL
             DanhMucGridView.DataSource = categoryService.Search(this.panel_search_textbox.Controls);
         }
 
-        private void btn_refresh_Click(object sender, System.EventArgs e)
-        {
-            this.panel_search_textbox.Controls.OfType<Control>().ClearValue();
-            DanhMucGridView.DataSource = categoryService.Search(this.panel_search_textbox.Controls);
-        }
-
         private void btn_create_Click(object sender, System.EventArgs e)
         {
 

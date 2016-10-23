@@ -44,7 +44,10 @@ namespace Model
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-
+            modelBuilder.Entity<tblIndexItem>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
         }
     }
 }

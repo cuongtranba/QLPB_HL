@@ -6,7 +6,7 @@ namespace Model
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("tblIndexItem")]
-    public partial class tblIndexItem
+    public partial class tblIndexItem:BaseModel
     {
         [Key]
         [StringLength(50)]

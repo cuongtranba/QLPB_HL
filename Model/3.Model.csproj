@@ -56,6 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseModel.cs" />
+    <Compile Include="Migrations\201610231622464_AddBaseModel.cs" />
+    <Compile Include="Migrations\201610231622464_AddBaseModel.Designer.cs">
+      <DependentUpon>201610231622464_AddBaseModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\ComboboxItem.cs" />
     <Compile Include="ViewModel\ControlViewModel.cs" />
     <Compile Include="HongLienDb.cs" />
@@ -125,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610170426439_delete-testmigration.resx">
       <DependentUpon>201610170426439_delete-testmigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610231622464_AddBaseModel.resx">
+      <DependentUpon>201610231622464_AddBaseModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
