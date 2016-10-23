@@ -43,10 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constant.cs" />
+    <Compile Include="ControlExtention.cs" />
     <Compile Include="CustomAttributes.cs" />
+    <Compile Include="CustomMyControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataGridViewExtentions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueryBuilder.cs" />
     <Compile Include="SortableBindingList.cs" />
     <Compile Include="StringExtentions.cs" />
     <Compile Include="StringName.Designer.cs">

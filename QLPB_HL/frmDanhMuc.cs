@@ -27,29 +27,30 @@ namespace QLPB_HL
             DanhMucGridView = DanhMucGridView.HiddentColumns<ItemViewModel>();
             DanhMucGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
-            for (int i = 0; i < categoryService.GetSearchComponent().Count; i++)
+            for (int i = 0; i < categoryService.GetSearchComponent.Count; i++)
             {
-                this.panel_search_textbox.Controls.Add(categoryService.GetSearchComponent()[i].Label,0,i);
-                this.panel_search_textbox.Controls.Add(categoryService.GetSearchComponent()[i].Control,1,i);
+                this.panel_search_textbox.Controls.Add(categoryService.GetSearchComponent[i].Label, 0, i);
+                this.panel_search_textbox.Controls.Add(categoryService.GetSearchComponent[i].Control, 1, i);
             }
-            for (int i = 0; i < categoryService.GetCRUDComponent().Count; i++)
+            for (int i = 0; i < categoryService.GetCRUDComponent.Count; i++)
             {
-                this.panel_crud_component.Controls.Add(categoryService.GetCRUDComponent()[i].Label, 0, i);
-                this.panel_crud_component.Controls.Add(categoryService.GetCRUDComponent()[i].Control, 1, i);
+                this.panel_crud_component.Controls.Add(categoryService.GetCRUDComponent[i].Label, 0, i);
+                this.panel_crud_component.Controls.Add(categoryService.GetCRUDComponent[i].Control, 1, i);
             }
-        }
-
-        private void quanly_panel_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btn_search_Click(object sender, System.EventArgs e)
         {
-            //DanhMucGridView.DataSource = categoryService.Search(this.Search_Panel_Component.Controls);
+            DanhMucGridView.DataSource = categoryService.Search(this.panel_search_textbox.Controls);
         }
 
-        private void btn_them_Click(object sender, System.EventArgs e)
+        private void btn_refresh_Click(object sender, System.EventArgs e)
+        {
+            this.panel_search_textbox.Controls.OfType<Control>().ClearValue();
+            DanhMucGridView.DataSource = categoryService.Search(this.panel_search_textbox.Controls);
+        }
+
+        private void btn_create_Click(object sender, System.EventArgs e)
         {
 
         }
@@ -64,21 +65,9 @@ namespace QLPB_HL
 
         }
 
-        private void btn_reset_Click(object sender, System.EventArgs e)
+        private void btn_crud_refresh_Click(object sender, System.EventArgs e)
         {
 
         }
-
-        //private void btn_refesh_search_Click(object sender, System.EventArgs e)
-        //{
-        //    var controls = this.Search_Panel_Component.Controls.OfType<Control>();
-        //    foreach (var control in controls)
-        //    {
-        //        control.Text = string.Empty;
-        //    }
-        //    DanhMucGridView.DataSource = categoryService.Search(this.Search_Panel_Component.Controls);
-        //}
-
-      
     }
 }

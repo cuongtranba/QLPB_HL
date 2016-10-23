@@ -75,6 +75,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\QueryBuilderHelper.cs" />
     <Compile Include="Implements\BaseService.cs" />
     <Compile Include="Implements\DocumentService.cs" />
     <Compile Include="Implements\CategoryItemService.cs" />

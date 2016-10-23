@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
+using Model.ViewModel;
 
 namespace Service.Interfaces
 {
     public interface ICategoryService
     {
         StringBuilder BaseQuery { get; }
+        List<ControlViewModel> GetSearchComponent { get; }
         object GetDataSource();
-        List<ControlViewModel> GetSearchComponent();
         object Search(Control.ControlCollection controls);
-        List<ControlViewModel> GetCRUDComponent();
+        List<ControlViewModel> GetCRUDComponent { get; }
     }
 }

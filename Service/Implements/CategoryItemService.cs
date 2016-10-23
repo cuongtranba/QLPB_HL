@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using Model;
 using Model.ViewModel;
+using Service.Helper;
 using Service.Interfaces;
 using _4.Helper;
 
@@ -27,72 +28,80 @@ namespace Service.Implements
             return items;
         }
 
-        public List<ControlViewModel> GetSearchComponent()
+        public List<ControlViewModel> GetSearchComponent
         {
-            var controlViewModel = new List<ControlViewModel>()
+            get
             {
-                new ControlViewModel()
+                var controlViewModel = new List<ControlViewModel>
                 {
-                    Control = new TextBox(){Name = "ItemName",Size = new Size(199,20)},
-                    Label = new Label() {Text = "Tên Hàng",TextAlign = ContentAlignment.MiddleLeft}
-                },
-                new ControlViewModel()
-                {
-                    Control = new TextBox() {Name = "Note",Size = new Size(199,20)},
-                    Label = new Label() {Text = "Ghi chú",TextAlign = ContentAlignment.MiddleLeft}
-                }
-            };
-            return controlViewModel;
+                    new ControlViewModel()
+                    {
+                        Control = new TextBox(){Name = "ItemName",Size = new Size(199,20)},
+                        Label = new Label() {Text = "Tên Hàng",TextAlign = ContentAlignment.MiddleLeft}
+                    },
+                    new ControlViewModel()
+                    {
+                        Control = new TextBox() {Name = "item.Note",Size = new Size(199,20)},
+                        Label = new Label() {Text = "Ghi chú",TextAlign = ContentAlignment.MiddleLeft},
+                        SqlParameter = "Note"
+                    }
+                };
+                return controlViewModel;
+            }
         }
 
         public object Search(Control.ControlCollection controls)
         {
-            var searchQuery = BaseQuery.Append(controls.BuildSearchQueryFromPanel());
-            var items = HongLienDb.Database.SqlQuery<ItemViewModel>(searchQuery.ToString(), controls.GetSearchParameters()).ToList().ToSortableBindingList();
+            var queryBuilder = controls.BuildSearchQueryFormControl(GetSearchComponent);
+            var searchQuery = BaseQuery.Append(queryBuilder.SqlQuery);
+            var items = HongLienDb.Database.SqlQuery<ItemViewModel>(searchQuery.ToString(), queryBuilder.SqlParameter.ToArray()).ToList().ToSortableBindingList();
             return items;
         }
 
-        public List<ControlViewModel> GetCRUDComponent()
+        public List<ControlViewModel> GetCRUDComponent
         {
-            var controlViewModel = new List<ControlViewModel>
+            get
             {
-                new ControlViewModel()
+                var controlViewModel = new List<ControlViewModel>
                 {
-                    Control = new TextBox(){Name = "ItemName"},
-                    Label = new Label(){Text = "Tên hàng",TextAlign = ContentAlignment.MiddleLeft}
-                },
-                new ControlViewModel()
-                {
-                    Control = new TextBox(){Name = "UnitID"},
-                    Label = new Label(){Text = "Đơn vị tính",TextAlign = ContentAlignment.MiddleLeft}
-                },
-                new ControlViewModel()
-                {
-                    Control = new TextBox(){Name = "BuyPrice"},
-                    Label = new Label(){Text = "Giá mua",TextAlign = ContentAlignment.MiddleLeft}
-                },
-                new ControlViewModel()
-                {
-                    Control = new TextBox(){Name = "SalePrice"},
-                    Label = new Label(){Text = "Giá bán",TextAlign = ContentAlignment.MiddleLeft}
-                },
-                new ControlViewModel()
-                {
-                    Control = new TextBox(){Name = "Note"},
-                    Label = new Label(){Text = "Ghi chú",TextAlign = ContentAlignment.MiddleLeft}
-                },
-                new ControlViewModel()
-                {
-                    Control = new TextBox(){Name = "GroupName"},
-                    Label = new Label(){Text = "Tên nhóm",TextAlign = ContentAlignment.MiddleLeft}
-                },
-                new ControlViewModel()
-                {
-                    Control = new TextBox(){Name = "StockDesc"},
-                    Label = new Label(){Text = "Kho",TextAlign = ContentAlignment.MiddleLeft}
-                },
-            };
-            return controlViewModel;
+                    new ControlViewModel()
+                    {
+                        Control = new TextBox(){Name = "ItemName"},
+                        Label = new Label(){Text = "Tên hàng",TextAlign = ContentAlignment.MiddleLeft}
+                    },
+                    new ControlViewModel()
+                    {
+                        Control = new TextBox(){Name = "UnitID"},
+                        Label = new Label(){Text = "Đơn vị tính",TextAlign = ContentAlignment.MiddleLeft}
+                    },
+                    new ControlViewModel()
+                    {
+                        Control = new TextBox(){Name = "BuyPrice"},
+                        Label = new Label(){Text = "Giá mua",TextAlign = ContentAlignment.MiddleLeft}
+                    },
+                    new ControlViewModel()
+                    {
+                        Control = new TextBox(){Name = "SalePrice"},
+                        Label = new Label(){Text = "Giá bán",TextAlign = ContentAlignment.MiddleLeft}
+                    },
+                    new ControlViewModel()
+                    {
+                        Control = new TextBox(){Name = "Note"},
+                        Label = new Label(){Text = "Ghi chú",TextAlign = ContentAlignment.MiddleLeft}
+                    },
+                    new ControlViewModel()
+                    {
+                        Control = new TextBox(){Name = "GroupName"},
+                        Label = new Label(){Text = "Tên nhóm",TextAlign = ContentAlignment.MiddleLeft}
+                    },
+                    new ControlViewModel()
+                    {
+                        Control = new TextBox(){Name = "StockDesc"},
+                        Label = new Label(){Text = "Kho",TextAlign = ContentAlignment.MiddleLeft}
+                    },
+                };
+                return controlViewModel;
+            }
         }
     }
 }
