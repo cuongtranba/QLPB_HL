@@ -7,7 +7,7 @@ namespace Model
     using System.Data.Entity.Spatial;
 
     [Table("tblIndexTransport")]
-    public partial class tblIndexTransport
+    public partial class tblIndexTransport : BaseModel
     {
         [Key]
         [StringLength(50)]

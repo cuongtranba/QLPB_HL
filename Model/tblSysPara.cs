@@ -7,7 +7,7 @@ namespace Model
     using System.Data.Entity.Spatial;
 
     [Table("tblSysPara")]
-    public partial class tblSysPara
+    public partial class tblSysPara : BaseModel
     {
         [Key]
         [StringLength(50)]

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-
 namespace _4.Helper
 {
     public class LocalizedDisplayNameAttribute : DisplayNameAttribute

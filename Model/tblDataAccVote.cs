@@ -7,7 +7,7 @@ namespace Model
     using System.Data.Entity.Spatial;
 
     [Table("tblDataAccVote")]
-    public partial class tblDataAccVote
+    public partial class tblDataAccVote:BaseModel
     {
         [Key]
         [StringLength(50)]

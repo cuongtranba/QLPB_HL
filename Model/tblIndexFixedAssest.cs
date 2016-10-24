@@ -7,7 +7,7 @@ namespace Model
     using System.Data.Entity.Spatial;
 
     [Table("tblIndexFixedAssest")]
-    public partial class tblIndexFixedAssest
+    public partial class tblIndexFixedAssest : BaseModel
     {
         [Key]
         [StringLength(10)]

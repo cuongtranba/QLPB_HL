@@ -20,7 +20,7 @@ namespace Service.Implements
 
         }
 
-        public StringBuilder BaseQuery => new StringBuilder("select item.KeyAutoID as ItemId,item.ItemName,item.UnitID,item.BuyPrice,item.SalePrice,item.Note,itemgroup.GroupName,item.GroupID,stock.StockDesc,stock.KeyAutoID as StockId\r\nfrom tblIndexItem item \r\nleft join tblIndexItemGroup itemgroup\r\non item.GroupID = itemgroup.KeyAutoID\r\nleft join tblIndexStock stock\r\non item.StockID = stock.KeyAutoID ");
+        public StringBuilder BaseQuery => new StringBuilder("select Row_number() over(order by item.ItemID) as Serial, item.KeyAutoID ,item.ItemID as ItemId,item.ItemName,item.UnitID,item.BuyPrice,item.SalePrice,item.Note,itemgroup.GroupName,item.GroupID,stock.StockDesc,stock.KeyAutoID as StockId from tblIndexItem item left join tblIndexItemGroup itemgroup on item.GroupID = itemgroup.KeyAutoID left join tblIndexStock stock on item.StockID = stock.KeyAutoID WHERE item.IsDeleted='false' ");
 
         public object GetDataSource()
         {
@@ -66,42 +66,68 @@ namespace Service.Implements
                 {
                     new ControlViewModel()
                     {
-                        Control = new TextBox(){Name = "ItemName"},
+                        Control = new TextBox(){Name = "KeyAutoID",Size = new Size(199,20)},
+                        Label = new Label(){Text = "Mã hàng",TextAlign = ContentAlignment.MiddleLeft},
+                        SqlParameter = "ItemId"
+                    },
+                    new ControlViewModel()
+                    {
+                        Control = new TextBox(){Name = "ItemName",Size = new Size(199,20)},
                         Label = new Label(){Text = "Tên hàng",TextAlign = ContentAlignment.MiddleLeft}
                     },
                     new ControlViewModel()
                     {
-                        Control = new TextBox(){Name = "UnitID"},
+                        Control = new TextBox(){Name = "UnitID",Size = new Size(199,20)},
                         Label = new Label(){Text = "Đơn vị tính",TextAlign = ContentAlignment.MiddleLeft}
                     },
                     new ControlViewModel()
                     {
-                        Control = new TextBox(){Name = "BuyPrice"},
+                        Control = new NumericUpDown(){Name = "BuyPrice",Size = new Size(199,20)},
                         Label = new Label(){Text = "Giá mua",TextAlign = ContentAlignment.MiddleLeft}
                     },
                     new ControlViewModel()
                     {
-                        Control = new TextBox(){Name = "SalePrice"},
+                        Control = new NumericUpDown(){Name = "SalePrice",Size = new Size(199,20)},
                         Label = new Label(){Text = "Giá bán",TextAlign = ContentAlignment.MiddleLeft}
                     },
                     new ControlViewModel()
                     {
-                        Control = new TextBox(){Name = "Note"},
+                        Control = new RichTextBox(){Name = "Note",Size = new Size(199,100)},
                         Label = new Label(){Text = "Ghi chú",TextAlign = ContentAlignment.MiddleLeft}
                     },
                     new ControlViewModel()
                     {
-                        Control = new TextBox(){Name = "GroupName"},
+                        Control = new ComboBox(){Name = "GroupName",Sorted = true,DropDownStyle = ComboBoxStyle.DropDownList,Size = new Size(199,20),SelectedIndex = -1,DataSource = GetGroups()},
                         Label = new Label(){Text = "Tên nhóm",TextAlign = ContentAlignment.MiddleLeft}
                     },
                     new ControlViewModel()
                     {
-                        Control = new TextBox(){Name = "StockDesc"},
+                        Control = new ComboBox(){Name = "StockDesc",Sorted = true,DropDownStyle = ComboBoxStyle.DropDownList,Size = new Size(199,20),SelectedIndex = -1,DataSource = this.GetStocks()},
                         Label = new Label(){Text = "Kho",TextAlign = ContentAlignment.MiddleLeft}
                     },
                 };
                 return controlViewModel;
             }
         }
+
+        public List<ComboboxItem> GetStocks()
+        {
+            return
+                HongLienDb.tblIndexStocks.AsNoTracking().Where(c => c.IsDeleted == false).Select(c => new ComboboxItem()
+                {
+                    Text = c.StockDesc,
+                    Value = c.KeyAutoID
+                }).ToList();
+        }
+
+        public List<ComboboxItem> GetGroups()
+        {
+            return
+                HongLienDb.tblIndexItemGroups.AsNoTracking()
+                    .Where(c => c.IsDeleted == false)
+                    .Select(c => new ComboboxItem() { Text = c.GroupName, Value = c.KeyAutoID })
+                    .ToList();
+        }
+
     }
 }

@@ -7,7 +7,7 @@ namespace Model
     using System.Data.Entity.Spatial;
 
     [Table("tblSoDuKho")]
-    public partial class tblSoDuKho
+    public partial class tblSoDuKho : BaseModel
     {
         [Key]
         [Column(Order = 0)]

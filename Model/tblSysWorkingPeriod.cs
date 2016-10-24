@@ -7,7 +7,7 @@ namespace Model
     using System.Data.Entity.Spatial;
 
     [Table("tblSysWorkingPeriod")]
-    public partial class tblSysWorkingPeriod
+    public partial class tblSysWorkingPeriod : BaseModel
     {
         [Key]
         [StringLength(50)]

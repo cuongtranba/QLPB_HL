@@ -7,7 +7,7 @@ namespace Model
     using System.Data.Entity.Spatial;
 
     [Table("tblSysFunction")]
-    public partial class tblSysFunction
+    public partial class tblSysFunction : BaseModel
     {
         [Key]
         [StringLength(50)]

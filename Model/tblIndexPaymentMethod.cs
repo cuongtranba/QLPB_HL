@@ -7,7 +7,7 @@ namespace Model
     using System.Data.Entity.Spatial;
 
     [Table("tblIndexPaymentMethod")]
-    public partial class tblIndexPaymentMethod
+    public partial class tblIndexPaymentMethod : BaseModel
     {
         [Key]
         [StringLength(2)]

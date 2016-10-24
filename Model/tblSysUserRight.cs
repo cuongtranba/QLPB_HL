@@ -7,7 +7,7 @@ namespace Model
     using System.Data.Entity.Spatial;
 
     [Table("tblSysUserRight")]
-    public partial class tblSysUserRight
+    public partial class tblSysUserRight : BaseModel
     {
         [Key]
         [Column(Order = 0)]

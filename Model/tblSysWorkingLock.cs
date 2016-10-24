@@ -7,7 +7,7 @@ namespace Model
     using System.Data.Entity.Spatial;
 
     [Table("tblSysWorkingLock")]
-    public partial class tblSysWorkingLock
+    public partial class tblSysWorkingLock : BaseModel
     {
         [Key]
         [StringLength(50)]

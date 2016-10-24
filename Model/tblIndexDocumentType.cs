@@ -7,7 +7,7 @@ namespace Model
     using System.Data.Entity.Spatial;
 
     [Table("tblIndexDocumentType")]
-    public partial class tblIndexDocumentType
+    public partial class tblIndexDocumentType : BaseModel
     {
         [Key]
         [StringLength(50)]

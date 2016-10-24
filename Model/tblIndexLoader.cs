@@ -7,7 +7,7 @@ namespace Model
     using System.Data.Entity.Spatial;
 
     [Table("tblIndexLoader")]
-    public partial class tblIndexLoader
+    public partial class tblIndexLoader : BaseModel
     {
         [Key]
         [StringLength(50)]

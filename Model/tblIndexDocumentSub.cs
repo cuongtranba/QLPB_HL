@@ -7,7 +7,7 @@ namespace Model
     using System.Data.Entity.Spatial;
 
     [Table("tblIndexDocumentSub")]
-    public partial class tblIndexDocumentSub
+    public partial class tblIndexDocumentSub : BaseModel
     {
         [Key]
         [Column(Order = 0)]

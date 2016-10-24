@@ -1,3 +1,6 @@
+using System;
+using System.Reflection;
+
 namespace Model
 {
     using System.Data.Entity;
@@ -44,7 +47,131 @@ namespace Model
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<tblDataAccVote>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblIndexAccount>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblIndexBranch>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblIndexCurrency>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblIndexCurrencyExRate>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblIndexDocument>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblIndexDocumentSub>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblIndexDocumentType>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblIndexFee>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblIndexFeeGroup>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblIndexFixedAssest>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblIndexInOutReason>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
             modelBuilder.Entity<tblIndexItem>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblIndexItemGroup>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblIndexLoader>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblIndexObject>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblIndexObjectGroup>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblIndexObjectType>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblIndexPaymentMethod>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblIndexStock>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblIndexTransport>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblIndexUnit>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblKhoCanDoi>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblPhieuXuatTheoKho>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblSoDuKho>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblSysFunction>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblSysInfo>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblSysPara>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblSysUser>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblSysUserRight>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblSysWorkingLock>().Map(m =>
+            {
+                m.MapInheritedProperties();
+            });
+            modelBuilder.Entity<tblSysWorkingPeriod>().Map(m =>
             {
                 m.MapInheritedProperties();
             });
