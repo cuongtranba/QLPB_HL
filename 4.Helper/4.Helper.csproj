@@ -45,9 +45,6 @@
     <Compile Include="Constant.cs" />
     <Compile Include="ControlExtention.cs" />
     <Compile Include="ControlsBinding.cs" />
-    <Compile Include="CustomMyControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="DataGridViewExtentions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyExtentions.cs" />
