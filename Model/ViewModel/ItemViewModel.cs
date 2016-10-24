@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using _4.Helper;
+using Model.Helper;
 
 namespace Model.ViewModel
 {
@@ -17,9 +17,9 @@ namespace Model.ViewModel
         [DisplayName("Đơn vị tính")]
         public string UnitID { get; set; }
         [DisplayName("Giá mua")]
-        public double? BuyPrice { get; set; }
+        public decimal? BuyPrice { get; set; }
         [DisplayName("Giá bán")]
-        public double? SalePrice { get; set; }
+        public decimal? SalePrice { get; set; }
         [DisplayName("Ghi chú")]
         public string Note { get; set; }
         [DisplayName("Tên nhóm")]

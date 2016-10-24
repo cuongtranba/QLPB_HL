@@ -34,7 +34,7 @@ namespace Service.Helper
             }
             if (queryBuilder.Any())
             {
-                model.SqlQuery = " Where " + string.Join(" And ", queryBuilder);
+                model.SqlQuery = string.Join(" And ", queryBuilder);
             }
             return model;
         }

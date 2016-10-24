@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="Constant.cs" />
     <Compile Include="ControlExtention.cs" />
-    <Compile Include="CustomAttributes.cs" />
+    <Compile Include="ControlsBinding.cs" />
     <Compile Include="CustomMyControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -75,6 +75,12 @@
     <EmbeddedResource Include="UserControls\GridView.resx">
       <DependentUpon>GridView.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\3.Model.csproj">
+      <Project>{ec77de32-b955-453a-9818-d6a9e8bd8d23}</Project>
+      <Name>3.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

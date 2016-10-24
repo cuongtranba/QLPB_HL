@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseModel.cs" />
+    <Compile Include="Helper\CustomAttributes.cs" />
     <Compile Include="Migrations\201610231622464_AddBaseModel.cs" />
     <Compile Include="Migrations\201610231622464_AddBaseModel.Designer.cs">
       <DependentUpon>201610231622464_AddBaseModel.cs</DependentUpon>
@@ -65,6 +66,11 @@
     <Compile Include="Migrations\201610240511343_Add-isdelete-column.Designer.cs">
       <DependentUpon>201610240511343_Add-isdelete-column.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610241342517_change-data-type.cs" />
+    <Compile Include="Migrations\201610241342517_change-data-type.Designer.cs">
+      <DependentUpon>201610241342517_change-data-type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\AddItemViewModel.cs" />
     <Compile Include="ViewModel\ComboboxItem.cs" />
     <Compile Include="ViewModel\ControlViewModel.cs" />
     <Compile Include="HongLienDb.cs" />
@@ -141,12 +147,9 @@
     <EmbeddedResource Include="Migrations\201610240511343_Add-isdelete-column.resx">
       <DependentUpon>201610240511343_Add-isdelete-column.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\4.Helper\4.Helper.csproj">
-      <Project>{635fe390-7776-4012-adca-87fff09455b8}</Project>
-      <Name>4.Helper</Name>
-    </ProjectReference>
+    <EmbeddedResource Include="Migrations\201610241342517_change-data-type.resx">
+      <DependentUpon>201610241342517_change-data-type.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

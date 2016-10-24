@@ -13,5 +13,6 @@ namespace Service.Interfaces
         object GetDataSource();
         object Search(Control.ControlCollection controls);
         List<ControlViewModel> GetCRUDComponent { get; }
+        void Create(TableLayoutControlCollection controls);
     }
 }

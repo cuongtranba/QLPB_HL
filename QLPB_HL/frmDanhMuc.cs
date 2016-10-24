@@ -46,7 +46,7 @@ namespace QLPB_HL
 
         private void btn_create_Click(object sender, System.EventArgs e)
         {
-
+            categoryService.Create(this.panel_crud_component.Controls);
         }
 
         private void btn_delete_Click(object sender, System.EventArgs e)

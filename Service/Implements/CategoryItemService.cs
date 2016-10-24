@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using AutoMapper.Execution;
 using Model;
 using Model.ViewModel;
 using Service.Helper;
@@ -53,7 +54,11 @@ namespace Service.Implements
         public object Search(Control.ControlCollection controls)
         {
             var queryBuilder = controls.BuildSearchQueryFormControl(GetSearchComponent);
-            var searchQuery = BaseQuery.Append(queryBuilder.SqlQuery);
+            var searchQuery = BaseQuery;
+            if (!string.IsNullOrEmpty(queryBuilder.SqlQuery))
+            {
+                searchQuery = BaseQuery.Append(" And " + queryBuilder.SqlQuery);
+            }
             var items = HongLienDb.Database.SqlQuery<ItemViewModel>(searchQuery.ToString(), queryBuilder.SqlParameter.ToArray()).ToList().ToSortableBindingList();
             return items;
         }
@@ -66,9 +71,8 @@ namespace Service.Implements
                 {
                     new ControlViewModel()
                     {
-                        Control = new TextBox(){Name = "KeyAutoID",Size = new Size(199,20)},
+                        Control = new TextBox(){Name = "ItemID",Size = new Size(199,20)},
                         Label = new Label(){Text = "Mã hàng",TextAlign = ContentAlignment.MiddleLeft},
-                        SqlParameter = "ItemId"
                     },
                     new ControlViewModel()
                     {
@@ -77,7 +81,7 @@ namespace Service.Implements
                     },
                     new ControlViewModel()
                     {
-                        Control = new TextBox(){Name = "UnitID",Size = new Size(199,20)},
+                        Control = new ComboBox(){Name = "UnitID",Size = new Size(199,20),DropDownStyle = ComboBoxStyle.DropDownList,SelectedIndex = -1,DataSource = GetUnits()},
                         Label = new Label(){Text = "Đơn vị tính",TextAlign = ContentAlignment.MiddleLeft}
                     },
                     new ControlViewModel()
@@ -97,17 +101,40 @@ namespace Service.Implements
                     },
                     new ControlViewModel()
                     {
-                        Control = new ComboBox(){Name = "GroupName",Sorted = true,DropDownStyle = ComboBoxStyle.DropDownList,Size = new Size(199,20),SelectedIndex = -1,DataSource = GetGroups()},
+                        Control = new ComboBox()
+                        {
+                            Name = "GroupID",
+                            Sorted = true,
+                            DropDownStyle = ComboBoxStyle.DropDownList,
+                            Size = new Size(199,20),
+                            SelectedIndex = -1,
+                            DataSource = GetGroups(),
+                        },
                         Label = new Label(){Text = "Tên nhóm",TextAlign = ContentAlignment.MiddleLeft}
                     },
                     new ControlViewModel()
                     {
-                        Control = new ComboBox(){Name = "StockDesc",Sorted = true,DropDownStyle = ComboBoxStyle.DropDownList,Size = new Size(199,20),SelectedIndex = -1,DataSource = this.GetStocks()},
+                        Control = new ComboBox()
+                        {
+                            Name = "StockID",
+                            Sorted = true,
+                            DropDownStyle = ComboBoxStyle.DropDownList,
+                            Size = new Size(199,20),
+                            SelectedIndex = -1,
+                            DataSource = this.GetStocks(),
+                        },
                         Label = new Label(){Text = "Kho",TextAlign = ContentAlignment.MiddleLeft}
                     },
                 };
                 return controlViewModel;
             }
+        }
+
+        public void Create(TableLayoutControlCollection controls)
+        {
+            var model = controls.ToModel<tblIndexItem>();
+            HongLienDb.tblIndexItems.Add(model);
+            HongLienDb.SaveChanges();
         }
 
         public List<ComboboxItem> GetStocks()
@@ -129,5 +156,13 @@ namespace Service.Implements
                     .ToList();
         }
 
+        public List<ComboboxItem> GetUnits()
+        {
+            return
+                HongLienDb.tblIndexUnits.AsNoTracking()
+                    .Where(c => c.IsDeleted == false)
+                    .Select(c => new ComboboxItem() { Text = c.UnitName, Value = c.UnitID })
+                    .ToList();
+        }
     }
 }

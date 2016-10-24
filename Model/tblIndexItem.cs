@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 
 namespace Model
 {
@@ -36,18 +37,23 @@ namespace Model
         [StringLength(50)]
         public string GroupID { get; set; }
 
-        public double? UnitRate1 { get; set; }
+        public decimal? UnitRate1 { get; set; }
 
-        public double? UnitRate2 { get; set; }
+        public decimal? UnitRate2 { get; set; }
         [DisplayName("Giá mua")]
-        public double? BuyPrice { get; set; }
+        public decimal? BuyPrice { get; set; }
         [DisplayName("Giá bán")]
-        public double? SalePrice { get; set; }
+        public decimal? SalePrice { get; set; }
 
         [StringLength(150)]
         [DisplayName(@"Ghi chú")]
         public string Note { get; set; }
 
         public bool? isSelected { get; set; }
+
+        public tblIndexItem()
+        {
+            KeyAutoID = Guid.NewGuid().ToString();
+        }
     }
 }
