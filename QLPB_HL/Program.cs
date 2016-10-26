@@ -39,6 +39,7 @@ namespace QLPB_HL
             Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<tblIndexItem, ItemViewModel>();
+                cfg.CreateMap<AddItemViewModel, tblIndexItem>();
             });
         }
 

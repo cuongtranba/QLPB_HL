@@ -7,6 +7,7 @@ namespace Model.ViewModel
 {
     public class ItemViewModel
     {
+        [DisplayName("STT")]
         public Int64 Serial { get; set; }
         [HiddenColumn]
         public string KeyAutoId { get; set; }

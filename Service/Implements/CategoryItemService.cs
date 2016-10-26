@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using AutoMapper;
 using AutoMapper.Execution;
 using Model;
 using Model.ViewModel;
@@ -86,12 +88,12 @@ namespace Service.Implements
                     },
                     new ControlViewModel()
                     {
-                        Control = new NumericUpDown(){Name = "BuyPrice",Size = new Size(199,20)},
+                        Control = new NumericUpDown(){Name = "BuyPrice",Size = new Size(199,20),Maximum = Decimal.MaxValue,Minimum = 0},
                         Label = new Label(){Text = "Giá mua",TextAlign = ContentAlignment.MiddleLeft}
                     },
                     new ControlViewModel()
                     {
-                        Control = new NumericUpDown(){Name = "SalePrice",Size = new Size(199,20)},
+                        Control = new NumericUpDown(){Name = "SalePrice",Size = new Size(199,20),Maximum = Decimal.MaxValue,Minimum = 0},
                         Label = new Label(){Text = "Giá bán",TextAlign = ContentAlignment.MiddleLeft}
                     },
                     new ControlViewModel()
@@ -132,7 +134,9 @@ namespace Service.Implements
 
         public void Create(TableLayoutControlCollection controls)
         {
-            var model = controls.ToModel<tblIndexItem>();
+            var viewModel = controls.ToModel<AddItemViewModel>();
+            var a = TryValidate(viewModel);
+            var model = Mapper.Map<AddItemViewModel, tblIndexItem>(viewModel);
             HongLienDb.tblIndexItems.Add(model);
             HongLienDb.SaveChanges();
         }

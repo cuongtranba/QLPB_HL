@@ -19,11 +19,10 @@ namespace Service.Helper
                 if (!string.IsNullOrEmpty(control.Text) && !string.IsNullOrEmpty(control.Name))
                 {
                     var controlViewModel = controlViewModels.FirstOrDefault(c => c.Control.Name == control.Name);
-                    decimal decimalResult;
-                    if (decimal.TryParse(control.Text, out decimalResult))
+                    if (control is NumericUpDown)
                     {
                         queryBuilder.Add($" {controlViewModel.Control.Name} = @{controlViewModel.SqlParameter} ");
-                        model.SqlParameter.Add(new SqlParameter(controlViewModel.SqlParameter, decimalResult));
+                        model.SqlParameter.Add(new SqlParameter(controlViewModel.SqlParameter, ((NumericUpDown)control).Value));
                     }
                     else
                     {
