@@ -6,27 +6,62 @@ namespace _4.Helper
 {
     public static class ControlExtention
     {
-        public static IEnumerable<Control> ClearValue(this IEnumerable<Control> controls)
+        public static void ClearValue(this TableLayoutControlCollection controls)
         {
-            var clearValue = controls as Control[] ?? controls.ToArray();
-            foreach (var control in clearValue)
+            foreach (var control in controls)
             {
-                if (!string.IsNullOrEmpty(control.Name))
+                if (control is TextBox)
                 {
-                    control.Text = string.Empty;
+                    TextBox textBox = (TextBox)control;
+                    textBox.Text = string.Empty;
+                }
+
+                if (control is ComboBox)
+                {
+                    ComboBox comboBox = (ComboBox)control;
+                    if (comboBox.Items.Count > 0)
+                        comboBox.SelectedIndex = 0;
+                }
+
+                if (control is CheckBox)
+                {
+                    CheckBox checkBox = (CheckBox)control;
+                    checkBox.Checked = false;
+                }
+
+                if (control is ListBox)
+                {
+                    ListBox listBox = (ListBox)control;
+                    listBox.ClearSelected();
+                }
+                if (control is NumericUpDown)
+                {
+                    var numericUpDown = (NumericUpDown)control;
+                    numericUpDown.Value = 0;
+                }
+                if (control is RichTextBox)
+                {
+                    var richTextBox = (RichTextBox)control;
+                    richTextBox.Text = string.Empty;
                 }
             }
-            return clearValue;
         }
 
-        public static string GetValueByName(this Control.ControlCollection collection,string name)
+        public static string GetValueByName(this Control.ControlCollection collection, string name)
         {
-            var values = collection.Find(name,false);
+            var values = collection.Find(name, false);
             if (values.Any())
             {
                 return values.FirstOrDefault().Text;
             }
             return string.Empty;
         }
+
+        public static DialogResult ShowErrorField(ValidationModel validationModel)
+        {
+            return MessageBox.Show(validationModel.AllErrorMessage, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+
     }
 }

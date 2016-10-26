@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.ComponentModel;
+using System.Linq;
 using System.Windows.Forms;
 using Autofac;
 using Model.ViewModel;
@@ -46,7 +48,17 @@ namespace QLPB_HL
 
         private void btn_create_Click(object sender, System.EventArgs e)
         {
-            categoryService.Create(this.panel_crud_component.Controls);
+            var result = categoryService.Create(this.panel_crud_component.Controls);
+            if (!result.IsValid)
+            {
+                ControlExtention.ShowErrorField(result);
+            }
+            else
+            {
+                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                panel_crud_component.Controls.ClearValue();
+            }
+            
         }
 
         private void btn_delete_Click(object sender, System.EventArgs e)

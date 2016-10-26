@@ -132,13 +132,17 @@ namespace Service.Implements
             }
         }
 
-        public void Create(TableLayoutControlCollection controls)
+        public ValidationModel Create(TableLayoutControlCollection controls)
         {
             var viewModel = controls.ToModel<AddItemViewModel>();
-            var a = TryValidate(viewModel);
-            var model = Mapper.Map<AddItemViewModel, tblIndexItem>(viewModel);
-            HongLienDb.tblIndexItems.Add(model);
-            HongLienDb.SaveChanges();
+            var modelState = viewModel.ModelState();
+            if (modelState.IsValid)
+            {
+                var model = Mapper.Map<AddItemViewModel, tblIndexItem>(viewModel);
+                HongLienDb.tblIndexItems.Add(model);
+                HongLienDb.SaveChanges();
+            }
+            return modelState;
         }
 
         public List<ComboboxItem> GetStocks()
