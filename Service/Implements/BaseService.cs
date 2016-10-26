@@ -14,7 +14,7 @@ namespace Service.Implements
             this.HongLienDb = hongLienDb;
         }
 
-        public virtual void Delete<T>(int id) where T : class
+        public virtual void Delete<T>(string id) where T : class
         {
             var dbSet = HongLienDb.Set<T>();
             var entity = dbSet.Find(id);

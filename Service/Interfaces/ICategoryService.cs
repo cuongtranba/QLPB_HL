@@ -1,5 +1,6 @@
 ﻿using Model;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Windows.Forms;
@@ -12,9 +13,11 @@ namespace Service.Interfaces
     {
         StringBuilder BaseQuery { get; }
         List<ControlViewModel> GetSearchComponent { get; }
-        object GetDataSource();
-        object Search(Control.ControlCollection controls);
+        SortableBindingList<ItemViewModel> GetDataSource();
+        SortableBindingList<ItemViewModel> Search(Control.ControlCollection controls);
         List<ControlViewModel> GetCRUDComponent { get; }
         ValidationModel Create(TableLayoutControlCollection controls);
+        void Delete(object currentRowDataBoundItem);
+        void HiddentColumns(DataGridView danhMucGridView);
     }
 }

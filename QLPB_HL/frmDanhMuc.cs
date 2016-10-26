@@ -20,13 +20,8 @@ namespace QLPB_HL
         private void frmDanhMuc_Load(object sender, System.EventArgs e)
         {
             categoryService = IOCFactory.Do(container => container.ResolveNamed<ICategoryService>(this.Text));
-
-            var bindingSource = new BindingSource
-            {
-                DataSource = categoryService.GetDataSource()
-            };
-            DanhMucGridView.DataSource = bindingSource;
-            DanhMucGridView = DanhMucGridView.HiddentColumns<ItemViewModel>();
+            DanhMucGridView.DataSource = categoryService.GetDataSource(); 
+            categoryService.HiddentColumns(DanhMucGridView);
             DanhMucGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
             for (int i = 0; i < categoryService.GetSearchComponent.Count; i++)
@@ -57,23 +52,34 @@ namespace QLPB_HL
             {
                 MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 panel_crud_component.Controls.ClearValue();
+                DanhMucGridView.DataSource = categoryService.GetDataSource();
             }
-            
         }
 
         private void btn_delete_Click(object sender, System.EventArgs e)
         {
-
+            if (DanhMucGridView.CurrentRow != null)
+            {
+                var result = MessageBox.Show("Bạn có chắc không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    categoryService.Delete(DanhMucGridView.CurrentRow.DataBoundItem);
+                    DanhMucGridView.DataSource = categoryService.GetDataSource();
+                }
+            }
         }
 
         private void btn_update_Click(object sender, System.EventArgs e)
         {
-
+            if (DanhMucGridView.CurrentRow != null)
+            {
+                DanhMucGridView.CurrentRow.DataBoundItem.ToControl(panel_crud_component.Controls);
+            }
         }
 
         private void btn_crud_refresh_Click(object sender, System.EventArgs e)
         {
-
+            panel_crud_component.Controls.ClearValue();
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Service.Implements
 
         public StringBuilder BaseQuery => new StringBuilder("select Row_number() over(order by item.ItemID) as Serial, item.KeyAutoID ,item.ItemID as ItemId,item.ItemName,item.UnitID,item.BuyPrice,item.SalePrice,item.Note,itemgroup.GroupName,item.GroupID,stock.StockDesc,stock.KeyAutoID as StockId from tblIndexItem item left join tblIndexItemGroup itemgroup on item.GroupID = itemgroup.KeyAutoID left join tblIndexStock stock on item.StockID = stock.KeyAutoID WHERE item.IsDeleted='false' ");
 
-        public object GetDataSource()
+        public SortableBindingList<ItemViewModel> GetDataSource()
         {
             var items = HongLienDb.Database.SqlQuery<ItemViewModel>(BaseQuery.ToString()).ToList().ToSortableBindingList();
             return items;
@@ -53,7 +53,7 @@ namespace Service.Implements
             }
         }
 
-        public object Search(Control.ControlCollection controls)
+        public SortableBindingList<ItemViewModel> Search(Control.ControlCollection controls)
         {
             var queryBuilder = controls.BuildSearchQueryFormControl(GetSearchComponent);
             var searchQuery = BaseQuery;
@@ -83,7 +83,7 @@ namespace Service.Implements
                     },
                     new ControlViewModel()
                     {
-                        Control = new ComboBox(){Name = "UnitID",Size = new Size(199,20),DropDownStyle = ComboBoxStyle.DropDownList,SelectedIndex = -1,DataSource = GetUnits()},
+                        Control = new ComboBox(){Name = "UnitID",Size = new Size(199,20),DropDownStyle = ComboBoxStyle.DropDownList,DataSource = GetUnits()},
                         Label = new Label(){Text = "Đơn vị tính",TextAlign = ContentAlignment.MiddleLeft}
                     },
                     new ControlViewModel()
@@ -145,32 +145,45 @@ namespace Service.Implements
             return modelState;
         }
 
+        public void Delete(object currentRowDataBoundItem)
+        {
+            var viewModel = (ItemViewModel)currentRowDataBoundItem;
+            this.Delete<tblIndexItem>(viewModel.KeyAutoId);
+        }
+
+        public void HiddentColumns(DataGridView danhMucGridView)
+        {
+            danhMucGridView.HiddentColumns<ItemViewModel>();
+        }
+
         public List<ComboboxItem> GetStocks()
         {
-            return
-                HongLienDb.tblIndexStocks.AsNoTracking().Where(c => c.IsDeleted == false).Select(c => new ComboboxItem()
-                {
-                    Text = c.StockDesc,
-                    Value = c.KeyAutoID
-                }).ToList();
+            var model = HongLienDb.tblIndexStocks.AsNoTracking()
+                .Where(c => c.IsDeleted == false)
+                .Select(c => new ComboboxItem(){Text = c.StockDesc,Value = c.KeyAutoID}).ToList();
+            model.Insert(0, ComboboxItem.Empty);
+            return model;
+
         }
 
         public List<ComboboxItem> GetGroups()
         {
-            return
-                HongLienDb.tblIndexItemGroups.AsNoTracking()
+            var model = HongLienDb.tblIndexItemGroups.AsNoTracking()
                     .Where(c => c.IsDeleted == false)
                     .Select(c => new ComboboxItem() { Text = c.GroupName, Value = c.KeyAutoID })
                     .ToList();
+            model.Insert(0, ComboboxItem.Empty);
+            return model;
         }
 
         public List<ComboboxItem> GetUnits()
         {
-            return
-                HongLienDb.tblIndexUnits.AsNoTracking()
-                    .Where(c => c.IsDeleted == false)
-                    .Select(c => new ComboboxItem() { Text = c.UnitName, Value = c.UnitID })
-                    .ToList();
+            var model = HongLienDb.tblIndexUnits.AsNoTracking()
+                     .Where(c => c.IsDeleted == false)
+                     .Select(c => new ComboboxItem() { Text = c.UnitName, Value = c.UnitID })
+                     .ToList();
+            model.Insert(0, ComboboxItem.Empty);
+            return model;
         }
     }
 }

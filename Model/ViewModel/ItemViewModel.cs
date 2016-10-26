@@ -12,7 +12,7 @@ namespace Model.ViewModel
         [HiddenColumn]
         public string KeyAutoId { get; set; }
         [DisplayName("Mã hàng")]
-        public string ItemId { get; set; }
+        public string ItemID { get; set; }
         [DisplayName("Tên Hàng")]
         public string ItemName { get; set; }
         [DisplayName("Đơn vị tính")]
