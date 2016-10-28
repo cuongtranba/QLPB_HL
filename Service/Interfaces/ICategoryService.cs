@@ -10,8 +10,8 @@ namespace Service.Interfaces
     {
         StringBuilder BaseQuery { get; }
         List<ControlViewModel> GetSearchComponent { get; }
-        SortableBindingList<ItemViewModel> GetDataSource();
-        SortableBindingList<ItemViewModel> Search(Control.ControlCollection controls);
+        object GetDataSource();
+        object Search(Control.ControlCollection controls);
         List<ControlViewModel> GetCRUDComponent { get; }
         ValidationModel Create(TableLayoutControlCollection controls);
         void Delete(object currentRowDataBoundItem);

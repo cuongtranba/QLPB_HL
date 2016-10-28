@@ -1,19 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using AutoMapper;
-using AutoMapper.Execution;
 using Model;
 using Model.ViewModel;
 using Service.Helper;
 using Service.Interfaces;
 using _4.Helper;
-using System.Threading.Tasks;
 
 namespace Service.Implements
 {
@@ -25,7 +21,7 @@ namespace Service.Implements
 
         public StringBuilder BaseQuery => new StringBuilder("select Row_number() over(order by item.ItemID) as Serial, item.KeyAutoID ,item.ItemID as ItemId,item.ItemName,item.UnitID,item.BuyPrice,item.SalePrice,item.Note,itemgroup.GroupName,item.GroupID,stock.StockDesc,stock.KeyAutoID as StockId from tblIndexItem item left join tblIndexItemGroup itemgroup on item.GroupID = itemgroup.KeyAutoID left join tblIndexStock stock on item.StockID = stock.KeyAutoID WHERE item.IsDeleted='false' ");
 
-        public SortableBindingList<ItemViewModel> GetDataSource()
+        public object GetDataSource()
         {
             var items = HongLienDb.Database.SqlQuery<ItemViewModel>(BaseQuery.ToString()).ToList().ToSortableBindingList();
             return items;
@@ -53,7 +49,7 @@ namespace Service.Implements
             }
         }
 
-        public SortableBindingList<ItemViewModel> Search(Control.ControlCollection controls)
+        public object Search(Control.ControlCollection controls)
         {
             var queryBuilder = controls.BuildSearchQueryFormControl(GetSearchComponent);
             var searchQuery = BaseQuery;
