@@ -70,7 +70,7 @@
     <Compile Include="Migrations\201610241342517_change-data-type.Designer.cs">
       <DependentUpon>201610241342517_change-data-type.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\AddItemViewModel.cs" />
+    <Compile Include="ViewModel\AddUpdateItemViewModel.cs" />
     <Compile Include="ViewModel\ComboboxItem.cs" />
     <Compile Include="ViewModel\ControlViewModel.cs" />
     <Compile Include="HongLienDb.cs" />

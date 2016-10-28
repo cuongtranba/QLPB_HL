@@ -1,9 +1,6 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Linq;
 using System.Windows.Forms;
 using Autofac;
-using Model.ViewModel;
 using Service.Interfaces;
 using _4.Helper;
 
@@ -12,9 +9,15 @@ namespace QLPB_HL
     public partial class frmDanhMuc : Form
     {
         private ICategoryService categoryService;
+        private bool IsUpdate = true;
         public frmDanhMuc()
         {
             InitializeComponent();
+        }
+
+        public void Do(Action<TableLayoutControlCollection> action)
+        {
+            action.Invoke(this.panel_category.Controls);
         }
 
         private void frmDanhMuc_Load(object sender, System.EventArgs e)
@@ -71,15 +74,43 @@ namespace QLPB_HL
 
         private void btn_update_Click(object sender, System.EventArgs e)
         {
-            if (DanhMucGridView.CurrentRow != null)
+            if (IsUpdate)
             {
-                DanhMucGridView.CurrentRow.DataBoundItem.ToControl(panel_crud_component.Controls);
+                IsUpdate = false;
+                btn_update.Text = "Lưu";
+
+                btn_create.Enabled = IsUpdate;
+                btn_delete.Enabled = IsUpdate;
+                DanhMucGridView.CurrentRow?.DataBoundItem.ToControls(panel_crud_component.Controls);
+            }
+            else
+            {
+                var result = categoryService.Update(this.panel_crud_component.Controls);
+                if (!result.IsValid)
+                {
+                    ControlExtention.ShowErrorField(result);
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DanhMucGridView.DataSource = categoryService.GetDataSource();
+                    panel_crud_component.Controls.ClearValue();
+                    btn_update.Text = "Cập nhật";
+                    IsUpdate = true;
+                    btn_create.Enabled = IsUpdate;
+                    btn_delete.Enabled = IsUpdate;
+                }
+
             }
         }
 
         private void btn_crud_refresh_Click(object sender, System.EventArgs e)
         {
             panel_crud_component.Controls.ClearValue();
+            btn_create.Enabled = Enabled;
+            btn_delete.Enabled = Enabled;
+            btn_update.Text = "Cập nhật";
+            IsUpdate = true;
         }
     }
 }

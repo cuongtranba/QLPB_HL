@@ -56,7 +56,6 @@ namespace QLPB_HL
             var formDanhMuc = FormFactory.CreateForm<frmDanhMuc>();
             formDanhMuc.MdiParent = Global.clsVar.fMain;
             formDanhMuc.Text = ((Button) sender).Text;
-            
             formDanhMuc.Show();
         }
 

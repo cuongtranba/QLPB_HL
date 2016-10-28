@@ -1,7 +1,4 @@
-﻿using Model;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using Model.ViewModel;
@@ -19,5 +16,6 @@ namespace Service.Interfaces
         ValidationModel Create(TableLayoutControlCollection controls);
         void Delete(object currentRowDataBoundItem);
         void HiddentColumns(DataGridView danhMucGridView);
+        ValidationModel Update(TableLayoutControlCollection controls);
     }
 }

@@ -91,7 +91,7 @@ namespace _4.Helper
             }
         }
 
-        public static void ToControl(this object source, Control.ControlCollection destination)
+        public static void ToControls(this object source, Control.ControlCollection destination)
         {
             foreach (var propertyInfo in source.GetType().GetProperties())
             {

@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using Model;
 using _4.Helper;
 
@@ -13,6 +15,7 @@ namespace Service.Implements
         {
             this.HongLienDb = hongLienDb;
         }
+      
 
         public virtual void Delete<T>(string id) where T : class
         {
@@ -28,6 +31,12 @@ namespace Service.Implements
             var results = new List<ValidationResult>();
             Validator.TryValidateObject(viewmodel, validationContext, results, true);
             return results;
+        }
+
+        protected void Update<T>(T entity) where T : class
+        {
+            HongLienDb.Set<T>().AddOrUpdate(entity);
+            HongLienDb.SaveChanges();
         }
     }
 }

@@ -13,6 +13,7 @@ using Model.ViewModel;
 using Service.Helper;
 using Service.Interfaces;
 using _4.Helper;
+using System.Threading.Tasks;
 
 namespace Service.Implements
 {
@@ -20,7 +21,6 @@ namespace Service.Implements
     {
         public CategoryItemService(HongLienDb hongLienDb) : base(hongLienDb)
         {
-
         }
 
         public StringBuilder BaseQuery => new StringBuilder("select Row_number() over(order by item.ItemID) as Serial, item.KeyAutoID ,item.ItemID as ItemId,item.ItemName,item.UnitID,item.BuyPrice,item.SalePrice,item.Note,itemgroup.GroupName,item.GroupID,stock.StockDesc,stock.KeyAutoID as StockId from tblIndexItem item left join tblIndexItemGroup itemgroup on item.GroupID = itemgroup.KeyAutoID left join tblIndexStock stock on item.StockID = stock.KeyAutoID WHERE item.IsDeleted='false' ");
@@ -103,6 +103,11 @@ namespace Service.Implements
                     },
                     new ControlViewModel()
                     {
+                        Control = new TextBox(){Name = "KeyAutoID",Size = new Size(199,100), Visible = false,Text = Guid.NewGuid().ToString()},
+                        Label = new Label(){Text = "KeyAutoID",TextAlign = ContentAlignment.MiddleLeft,Visible = false}
+                    },
+                    new ControlViewModel()
+                    {
                         Control = new ComboBox()
                         {
                             Name = "GroupID",
@@ -148,7 +153,7 @@ namespace Service.Implements
         public void Delete(object currentRowDataBoundItem)
         {
             var viewModel = (ItemViewModel)currentRowDataBoundItem;
-            this.Delete<tblIndexItem>(viewModel.KeyAutoId);
+            this.Delete<tblIndexItem>(viewModel.KeyAutoID);
         }
 
         public void HiddentColumns(DataGridView danhMucGridView)
@@ -156,11 +161,23 @@ namespace Service.Implements
             danhMucGridView.HiddentColumns<ItemViewModel>();
         }
 
+        public ValidationModel Update(TableLayoutControlCollection controls)
+        {
+            var viewModel = controls.ToModel<UpdateItemViewModel>();
+            var modelState = viewModel.ModelState();
+            if (modelState.IsValid)
+            {
+                var model = Mapper.Map<UpdateItemViewModel, tblIndexItem>(viewModel);
+                base.Update(model);
+            }
+            return modelState;
+        }
+
         public List<ComboboxItem> GetStocks()
         {
             var model = HongLienDb.tblIndexStocks.AsNoTracking()
                 .Where(c => c.IsDeleted == false)
-                .Select(c => new ComboboxItem(){Text = c.StockDesc,Value = c.KeyAutoID}).ToList();
+                .Select(c => new ComboboxItem() { Text = c.StockDesc, Value = c.KeyAutoID }).ToList();
             model.Insert(0, ComboboxItem.Empty);
             return model;
 
@@ -185,5 +202,7 @@ namespace Service.Implements
             model.Insert(0, ComboboxItem.Empty);
             return model;
         }
+
+
     }
 }
