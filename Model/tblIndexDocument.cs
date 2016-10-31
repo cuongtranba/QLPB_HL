@@ -112,7 +112,7 @@ namespace Model
         [StringLength(150)]
         public string Note { get; set; }
 
-        public bool? isLock { get; set; }
+        public bool isLock { get; set; }
 
         [StringLength(50)]
         public string CreateBy { get; set; }

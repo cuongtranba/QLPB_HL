@@ -114,10 +114,22 @@ namespace QLPB_HL
         private void btnHH1_Click(object sender, EventArgs e)
         {
             //Phiếu nhập
-            //var frmDocument = FormFactory.CreateForm<frmDocument>();
-            //frmDocument.MdiParent = Global.clsVar.fMain;
-            //frmDocument.Text = ((Button)sender).Text;
-            //frmDocument.Show();
+            var frmDocument = FormFactory.CreateForm<frmDocument>();
+            frmDocument.MdiParent = Global.clsVar.fMain;
+            frmDocument.Text = ((Button)sender).Text;
+            frmDocument.Show();
+            frmDocument.BringToFront();
+            Program.DeactivePanel();
+        }
+
+        private void button59_Click(object sender, EventArgs e)
+        {
+            //Phiếu xuất
+            var frmDocument = FormFactory.CreateForm<frmDocument>();
+            frmDocument.MdiParent = Global.clsVar.fMain;
+            frmDocument.Text = ((Button)sender).Text;
+            frmDocument.sDocumentCode = "002";
+            frmDocument.Show();
         }
     }
 }

@@ -59,6 +59,7 @@
     <Compile Include="ControlExtention.cs" />
     <Compile Include="ControlsBinding.cs" />
     <Compile Include="DataGridViewExtentions.cs" />
+    <Compile Include="DateTimeExtentions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyExtentions.cs" />
     <Compile Include="SortableBindingList.cs" />
