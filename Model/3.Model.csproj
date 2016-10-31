@@ -70,6 +70,10 @@
     <Compile Include="Migrations\201610241342517_change-data-type.Designer.cs">
       <DependentUpon>201610241342517_change-data-type.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610271007083_IsLock.cs" />
+    <Compile Include="Migrations\201610271007083_IsLock.Designer.cs">
+      <DependentUpon>201610271007083_IsLock.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\AddItemViewModel.cs" />
     <Compile Include="ViewModel\ComboboxItem.cs" />
     <Compile Include="ViewModel\ControlViewModel.cs" />
@@ -121,6 +125,7 @@
     <Compile Include="tblSysUserRight.cs" />
     <Compile Include="tblSysWorkingLock.cs" />
     <Compile Include="tblSysWorkingPeriod.cs" />
+    <Compile Include="ViewModel\DocumentViewModel.cs" />
     <Compile Include="ViewModel\GridViewHeaderViewModel.cs" />
     <Compile Include="ViewModel\ItemViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
@@ -149,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610241342517_change-data-type.resx">
       <DependentUpon>201610241342517_change-data-type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610271007083_IsLock.resx">
+      <DependentUpon>201610271007083_IsLock.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

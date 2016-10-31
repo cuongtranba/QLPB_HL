@@ -979,6 +979,7 @@
             this.button59.Text = "Phiếu xuất";
             this.button59.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button59.UseVisualStyleBackColor = true;
+            this.button59.Click += new System.EventHandler(this.button59_Click);
             this.button59.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
             this.button59.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
@@ -1577,7 +1578,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(905, 497);
-            this.ControlBox = false;
             this.Controls.Add(this.mainTool);
             this.Controls.Add(this.pnlHangHoaL);
             this.Controls.Add(this.pnlVonTienL);
@@ -1589,10 +1589,8 @@
             this.Controls.Add(this.pnlKeToanL);
             this.Controls.Add(this.pnlBaoCaoL);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.KeyPreview = true;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.mainTool.ResumeLayout(false);
             this.mainTool.PerformLayout();

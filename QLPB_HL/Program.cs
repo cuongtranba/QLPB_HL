@@ -43,6 +43,11 @@ namespace QLPB_HL
             });
         }
 
+        public static void DeactivePanel()
+        {
+            Global.clsVar.fMain.panel1.SendToBack();
+        }
+
         private static IContainer RegisterIOC()
         {
             var builder = new ContainerBuilder();
