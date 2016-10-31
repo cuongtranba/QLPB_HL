@@ -75,6 +75,11 @@
       <DependentUpon>201610271007083_IsLock.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AddItemViewModel.cs" />
+    <Compile Include="Migrations\201610310120444_ChangeStock.cs" />
+    <Compile Include="Migrations\201610310120444_ChangeStock.Designer.cs">
+      <DependentUpon>201610310120444_ChangeStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\AddUpdateItemViewModel.cs" />
     <Compile Include="ViewModel\ComboboxItem.cs" />
     <Compile Include="ViewModel\ControlViewModel.cs" />
     <Compile Include="HongLienDb.cs" />
@@ -131,6 +136,8 @@
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\QueryParameterViewModel.cs" />
     <Compile Include="ViewModel\SearchItemViewModel.cs" />
+    <Compile Include="ViewModel\SearchStockViewModel.cs" />
+    <Compile Include="ViewModel\StockViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -157,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610271007083_IsLock.resx">
       <DependentUpon>201610271007083_IsLock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610310120444_ChangeStock.resx">
+      <DependentUpon>201610310120444_ChangeStock.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

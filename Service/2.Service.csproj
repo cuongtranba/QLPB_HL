@@ -79,6 +79,7 @@
     <Compile Include="Implements\BaseService.cs" />
     <Compile Include="Implements\DocumentService.cs" />
     <Compile Include="Implements\CategoryItemService.cs" />
+    <Compile Include="Implements\StockCategoryService.cs" />
     <Compile Include="Implements\UserService.cs" />
     <Compile Include="Interfaces\IDocumentService.cs" />
     <Compile Include="Interfaces\ICategoryService.cs" />

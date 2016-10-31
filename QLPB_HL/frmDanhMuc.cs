@@ -1,7 +1,6 @@
-﻿using System.Linq;
+﻿using System;
 using System.Windows.Forms;
 using Autofac;
-using Model.ViewModel;
 using Service.Interfaces;
 using _4.Helper;
 
@@ -10,21 +9,22 @@ namespace QLPB_HL
     public partial class frmDanhMuc : Form
     {
         private ICategoryService categoryService;
+        private bool IsUpdate = true;
         public frmDanhMuc()
         {
             InitializeComponent();
         }
 
+        public void Do(Action<TableLayoutControlCollection> action)
+        {
+            action.Invoke(this.panel_category.Controls);
+        }
+
         private void frmDanhMuc_Load(object sender, System.EventArgs e)
         {
             categoryService = IOCFactory.Do(container => container.ResolveNamed<ICategoryService>(this.Text));
-
-            var bindingSource = new BindingSource
-            {
-                DataSource = categoryService.GetDataSource()
-            };
-            DanhMucGridView.DataSource = bindingSource;
-            DanhMucGridView = DanhMucGridView.HiddentColumns<ItemViewModel>();
+            DanhMucGridView.DataSource = categoryService.GetDataSource(); 
+            categoryService.HiddentColumns(DanhMucGridView);
             DanhMucGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
             for (int i = 0; i < categoryService.GetSearchComponent.Count; i++)
@@ -46,22 +46,71 @@ namespace QLPB_HL
 
         private void btn_create_Click(object sender, System.EventArgs e)
         {
-            categoryService.Create(this.panel_crud_component.Controls);
+            var result = categoryService.Create(this.panel_crud_component.Controls);
+            if (!result.IsValid)
+            {
+                ControlExtention.ShowErrorField(result);
+            }
+            else
+            {
+                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                panel_crud_component.Controls.ClearValue();
+                DanhMucGridView.DataSource = categoryService.GetDataSource();
+            }
         }
 
         private void btn_delete_Click(object sender, System.EventArgs e)
         {
-
+            if (DanhMucGridView.CurrentRow != null)
+            {
+                var result = MessageBox.Show("Bạn có chắc không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    categoryService.Delete(DanhMucGridView.CurrentRow.DataBoundItem);
+                    DanhMucGridView.DataSource = categoryService.GetDataSource();
+                }
+            }
         }
 
         private void btn_update_Click(object sender, System.EventArgs e)
         {
+            if (IsUpdate)
+            {
+                IsUpdate = false;
+                btn_update.Text = "Lưu";
 
+                btn_create.Enabled = IsUpdate;
+                btn_delete.Enabled = IsUpdate;
+                DanhMucGridView.CurrentRow?.DataBoundItem.ToControls(panel_crud_component.Controls);
+            }
+            else
+            {
+                var result = categoryService.Update(this.panel_crud_component.Controls);
+                if (!result.IsValid)
+                {
+                    ControlExtention.ShowErrorField(result);
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DanhMucGridView.DataSource = categoryService.GetDataSource();
+                    panel_crud_component.Controls.ClearValue();
+                    btn_update.Text = "Cập nhật";
+                    IsUpdate = true;
+                    btn_create.Enabled = IsUpdate;
+                    btn_delete.Enabled = IsUpdate;
+                }
+
+            }
         }
 
         private void btn_crud_refresh_Click(object sender, System.EventArgs e)
         {
-
+            panel_crud_component.Controls.ClearValue();
+            btn_create.Enabled = Enabled;
+            btn_delete.Enabled = Enabled;
+            btn_update.Text = "Cập nhật";
+            IsUpdate = true;
         }
     }
 }

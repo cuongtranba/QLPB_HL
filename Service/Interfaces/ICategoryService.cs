@@ -1,8 +1,8 @@
-﻿using Model;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using Model.ViewModel;
+using _4.Helper;
 
 namespace Service.Interfaces
 {
@@ -13,6 +13,9 @@ namespace Service.Interfaces
         object GetDataSource();
         object Search(Control.ControlCollection controls);
         List<ControlViewModel> GetCRUDComponent { get; }
-        void Create(TableLayoutControlCollection controls);
+        ValidationModel Create(TableLayoutControlCollection controls);
+        void Delete(object currentRowDataBoundItem);
+        void HiddentColumns(DataGridView danhMucGridView);
+        ValidationModel Update(TableLayoutControlCollection controls);
     }
 }
