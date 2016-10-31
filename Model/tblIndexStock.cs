@@ -34,7 +34,7 @@ namespace Model
 
         public bool isFull { get; set; }
 
-        public double StockAvilable { get; set; }
+        public int StockAvailable { get; set; }
 
         [StringLength(50)]
         public string UnitID { get; set; }
