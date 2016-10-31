@@ -1,7 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using AutoMapper.QueryableExtensions;
 using Model;
 using Model.ViewModel;
 using Service.Interfaces;
@@ -9,37 +12,69 @@ using _4.Helper;
 
 namespace Service.Implements
 {
-    public class StockCategoryService:BaseService,ICategoryService<tblIndexStock>
+    public class StockCategoryService : BaseService, ICategoryService
     {
-        public StockCategoryService(HongLienDb hongLienDb) : base(hongLienDb)
-        {
-        }
-
         public StringBuilder BaseQuery { get; }
 
         public List<ControlViewModel> GetSearchComponent => new List<ControlViewModel>()
         {
             new ControlViewModel()
-            {
-                Control = new TextBox()
-                {
-                    
-                }
-            }
+                    {
+                        Control = new TextBox(){Name = "StockDesc",Size = new Size(199,20)},
+                        Label = new Label(){Text = "Tên Kho",TextAlign = ContentAlignment.MiddleLeft},
+                    },
+            new ControlViewModel()
+                    {
+                        Control = new TextBox(){Name = "Note",Size = new Size(199,20)},
+                        Label = new Label(){Text = "Ghi Chú",TextAlign = ContentAlignment.MiddleLeft},
+                    },
         };
-       
 
-        public SortableBindingList<tblIndexStock> GetDataSource()
+        public object GetDataSource()
         {
-            throw new System.NotImplementedException();
+            return
+                HongLienDb.tblIndexStocks.AsNoTracking()
+                    .Where(c => c.IsDeleted == false)
+                    .ProjectTo<StockViewModel>()
+                    .ToList()
+                    .ToSortableBindingList();
         }
 
-        public SortableBindingList<tblIndexStock> Search(Control.ControlCollection controls)
+        public object Search(Control.ControlCollection controls)
         {
-            throw new System.NotImplementedException();
+            var searchViewModel = controls.ToModel<SearchStockViewModel>();
+
+            return
+                HongLienDb.tblIndexStocks.AsNoTracking()
+                    .Where(
+                        c =>
+                            c.IsDeleted == false && c.Note.Contains(searchViewModel.Note) &&
+                            c.StockDesc.Contains(searchViewModel.StockDesc))
+                    .ToList()
+                    .ToSortableBindingList();
+
         }
 
-        public List<ControlViewModel> GetCRUDComponent { get; }
+        public List<ControlViewModel> GetCRUDComponent
+        {
+            get
+            {
+                return new List<ControlViewModel>()
+                {
+                    new ControlViewModel()
+                    {
+                        Control = new TextBox(){Name = "StockID",Size = new Size(199,20)},
+                        Label = new Label(){Text = "Mã kho",TextAlign = ContentAlignment.MiddleLeft},
+                    },
+                    new ControlViewModel()
+                    {
+                        Control = new TextBox(){Name = "StockDesc",Size = new Size(199,20)},
+                        Label = new Label(){Text = "Tên Kho",TextAlign = ContentAlignment.MiddleLeft},
+                    }
+                };
+            }
+        }
+
         public ValidationModel Create(TableLayoutControlCollection controls)
         {
             throw new System.NotImplementedException();
@@ -52,12 +87,16 @@ namespace Service.Implements
 
         public void HiddentColumns(DataGridView danhMucGridView)
         {
-            throw new System.NotImplementedException();
+            danhMucGridView.HiddentColumns<StockViewModel>();
         }
 
         public ValidationModel Update(TableLayoutControlCollection controls)
         {
             throw new System.NotImplementedException();
+        }
+
+        public StockCategoryService(HongLienDb hongLienDb) : base(hongLienDb)
+        {
         }
     }
 }
