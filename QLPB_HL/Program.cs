@@ -44,6 +44,10 @@ namespace QLPB_HL
                 cfg.CreateMap<StockViewModel, tblIndexStock>().ReverseMap();
                 cfg.CreateMap<AddStockViewModel, tblIndexStock>();
                 cfg.CreateMap<UpdateStockViewModel, tblIndexStock>();
+                cfg.CreateMap<LoaderViewModel, tblIndexLoader>().ReverseMap();
+                cfg.CreateMap<UpdateLoaderViewModel, tblIndexLoader>();
+                cfg.CreateMap<SearchLoaderViewModel, tblIndexLoader>();
+                cfg.CreateMap<AddLoaderViewModel, tblIndexLoader>();
             });
         }
 

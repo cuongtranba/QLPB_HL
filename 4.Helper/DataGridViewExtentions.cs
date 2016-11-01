@@ -105,9 +105,12 @@ namespace _4.Helper
         public static SortableBindingList<T> ToSortableBindingList<T>(this List<T> list) where T : class
         {
             var sortableBindingList = new SortableBindingList<T>();
+            var serial = 1;
             foreach (var item in list.AsParallel())
             {
+                item.TrySetProperty("Serial", serial);
                 sortableBindingList.Add(item);
+                serial += 1;
             }
             return sortableBindingList;
         }

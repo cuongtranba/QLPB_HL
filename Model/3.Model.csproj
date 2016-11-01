@@ -90,6 +90,7 @@
     <Compile Include="Migrations\201611010321121_aaaa.Designer.cs">
       <DependentUpon>201611010321121_aaaa.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AddLoaderViewModel.cs" />
     <Compile Include="ViewModel\AddStockViewModel.cs" />
     <Compile Include="ViewModel\AddUpdateItemViewModel.cs" />
     <Compile Include="ViewModel\ComboboxItem.cs" />
@@ -145,11 +146,14 @@
     <Compile Include="ViewModel\DocumentViewModel.cs" />
     <Compile Include="ViewModel\GridViewHeaderViewModel.cs" />
     <Compile Include="ViewModel\ItemViewModel.cs" />
+    <Compile Include="ViewModel\LoaderViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\QueryParameterViewModel.cs" />
     <Compile Include="ViewModel\SearchItemViewModel.cs" />
+    <Compile Include="ViewModel\SearchLoaderViewModel.cs" />
     <Compile Include="ViewModel\SearchStockViewModel.cs" />
     <Compile Include="ViewModel\StockViewModel.cs" />
+    <Compile Include="ViewModel\UpdateLoaderViewModel.cs" />
     <Compile Include="ViewModel\UpdateStockViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

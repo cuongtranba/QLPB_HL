@@ -5,6 +5,8 @@ namespace Model.ViewModel
 {
     public class StockViewModel
     {
+        [DisplayName("STT")]
+        public int Serial { get; set; }
         [HiddenColumn]
         public string KeyAutoID { get; set; }
         [DisplayName("Mã kho")]
