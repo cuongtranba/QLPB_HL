@@ -136,6 +136,11 @@ namespace Service.Implements
                     {
                         Control = new ComboBox() {Name = "UnitID",Size = new Size(199,20),DropDownStyle = ComboBoxStyle.DropDownList,DataSource = GetUnit()},
                         Label = new Label(){Text = "Đơn vị tính",TextAlign = ContentAlignment.MiddleLeft},
+                    },
+                    new ControlViewModel()
+                    {
+                        Control = new TextBox() {Name = "KeyAutoID",Size = new Size(199,20),Visible = false},
+                        Label = new Label(){Text = "KeyAutoID",TextAlign = ContentAlignment.MiddleLeft,Visible = false},
                     }
                 };
             }
@@ -143,11 +148,13 @@ namespace Service.Implements
 
         private List<ComboboxItem> GetUnit()
         {
-            return HongLienDb.tblIndexUnits.Where(c => c.IsDeleted == false).Select(c => new ComboboxItem()
+            var model= HongLienDb.tblIndexUnits.Where(c => c.IsDeleted == false).Select(c => new ComboboxItem()
             {
                 Text = c.UnitName,
                 Value = c.UnitID
             }).ToList();
+            model.Insert(0, ComboboxItem.Empty);
+            return model;
         }
 
         private List<ComboboxItem> GetAccount()
@@ -187,7 +194,14 @@ namespace Service.Implements
 
         public ValidationModel Update(TableLayoutControlCollection controls)
         {
-            throw new System.NotImplementedException();
+            var viewModel = controls.ToModel<UpdateStockViewModel>();
+            var modelState = viewModel.ModelState();
+            if (modelState.IsValid)
+            {
+                var model = Mapper.Map<UpdateStockViewModel, tblIndexStock>(viewModel);
+                base.Update(model);
+            }
+            return modelState;
         }
 
         public StockCategoryService(HongLienDb hongLienDb) : base(hongLienDb)

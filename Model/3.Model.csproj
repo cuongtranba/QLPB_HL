@@ -78,7 +78,6 @@
     <Compile Include="Migrations\201610271007083_IsLock.Designer.cs">
       <DependentUpon>201610271007083_IsLock.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\AddItemViewModel.cs" />
     <Compile Include="Migrations\201610310120444_ChangeStock.cs" />
     <Compile Include="Migrations\201610310120444_ChangeStock.Designer.cs">
       <DependentUpon>201610310120444_ChangeStock.cs</DependentUpon>
@@ -86,6 +85,10 @@
     <Compile Include="Migrations\201610312139177_changeAvailable.cs" />
     <Compile Include="Migrations\201610312139177_changeAvailable.Designer.cs">
       <DependentUpon>201610312139177_changeAvailable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611010321121_aaaa.cs" />
+    <Compile Include="Migrations\201611010321121_aaaa.Designer.cs">
+      <DependentUpon>201611010321121_aaaa.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AddStockViewModel.cs" />
     <Compile Include="ViewModel\AddUpdateItemViewModel.cs" />
@@ -147,6 +150,7 @@
     <Compile Include="ViewModel\SearchItemViewModel.cs" />
     <Compile Include="ViewModel\SearchStockViewModel.cs" />
     <Compile Include="ViewModel\StockViewModel.cs" />
+    <Compile Include="ViewModel\UpdateStockViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -179,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610312139177_changeAvailable.resx">
       <DependentUpon>201610312139177_changeAvailable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611010321121_aaaa.resx">
+      <DependentUpon>201611010321121_aaaa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

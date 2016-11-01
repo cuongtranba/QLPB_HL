@@ -3,9 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Model.ViewModel
 {
-    public class AddStockViewModel
+    public class UpdateStockViewModel
     {
-        public string KeyAutoID => Guid.NewGuid().ToString();
+        public string KeyAutoID { get; set; }
         [Required(ErrorMessage = "Thiếu mã kho")]
         [StringLength(50)]
         public string StockID { get; set; }
@@ -21,5 +21,4 @@ namespace Model.ViewModel
         [Required(ErrorMessage = "Thiếu đơn vị tính")]
         public string UnitID { get; set; }
     }
-
 }
