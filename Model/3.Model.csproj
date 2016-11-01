@@ -153,6 +153,7 @@
     <Compile Include="ViewModel\SearchLoaderViewModel.cs" />
     <Compile Include="ViewModel\SearchStockViewModel.cs" />
     <Compile Include="ViewModel\StockViewModel.cs" />
+    <Compile Include="ViewModel\TransportViewModel.cs" />
     <Compile Include="ViewModel\UpdateLoaderViewModel.cs" />
     <Compile Include="ViewModel\UpdateStockViewModel.cs" />
   </ItemGroup>

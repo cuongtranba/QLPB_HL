@@ -11,5 +11,6 @@ namespace _4.Helper
         public static string CategoryItem = "Danh mục hàng hóa";
         public static string CategoryStock = "Danh mục kho";
         public static string CategoryLoader = "Danh mục bốc xếp";
+        public static string CategoryTransport = "Danh mục phương tiện";
     }
 }

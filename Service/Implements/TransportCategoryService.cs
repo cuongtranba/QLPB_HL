@@ -12,30 +12,30 @@ using _4.Helper;
 
 namespace Service.Implements
 {
-    public class LoaderCategoryService : BaseService, ICategoryService
+    public class TransportCategoryService:BaseService,ICategoryService
     {
-        public LoaderCategoryService(HongLienDb hongLienDb) : base(hongLienDb)
+        public TransportCategoryService(HongLienDb hongLienDb) : base(hongLienDb)
         {
         }
-        
-        public StringBuilder BaseQuery { get; }
 
-        private IQueryable<LoaderViewModel> BaseLoaderQuery()
+        public StringBuilder BaseQuery { get; }
+        private IQueryable<TransportViewModel> BaseTransQuery()
         {
-            return HongLienDb.tblIndexLoaders.AsNoTracking().Where(c => c.IsDeleted == false)
-                .ProjectTo<LoaderViewModel>();
+            return HongLienDb.tblIndexTransports.AsNoTracking().Where(c => c.IsDeleted == false)
+                .ProjectTo<TransportViewModel>();
         }
+
         public List<ControlViewModel> GetSearchComponent => new List<ControlViewModel>()
         {
            new ControlViewModel()
                     {
-                        Control = new TextBox(){Name = "LoaderID",Size = new Size(199,20)},
-                        Label = new Label() {Text = "Mã bốc xếp",TextAlign = ContentAlignment.MiddleLeft}
+                        Control = new TextBox(){Name = "TransID",Size = new Size(199,20)},
+                        Label = new Label() {Text = "Mã phương tiện",TextAlign = ContentAlignment.MiddleLeft}
                     },
            new ControlViewModel()
                     {
-                        Control = new TextBox(){Name = "LoaderName",Size = new Size(199,20)},
-                        Label = new Label() {Text = "Tên bốc xếp",TextAlign = ContentAlignment.MiddleLeft}
+                        Control = new TextBox(){Name = "TransName",Size = new Size(199,20)},
+                        Label = new Label() {Text = "Tên phương tiện",TextAlign = ContentAlignment.MiddleLeft}
                     },
            new ControlViewModel()
                     {
@@ -43,27 +43,26 @@ namespace Service.Implements
                         Label = new Label() {Text = "Ghi chú",TextAlign = ContentAlignment.MiddleLeft}
                     }
         };
-
         public object GetDataSource()
         {
-            return BaseLoaderQuery().ToList().ToSortableBindingList();
+            return BaseTransQuery().ToList().ToSortableBindingList();
         }
 
         public object Search(Control.ControlCollection controls)
         {
-            var searchModel = controls.ToModel<SearchLoaderViewModel>();
-            var query = BaseLoaderQuery();
-            if (!string.IsNullOrEmpty(searchModel.LoaderID))
-            {
-                query = query.Where(c => c.LoaderID.Contains(searchModel.LoaderID));
-            }
-            if (!string.IsNullOrEmpty(searchModel.LoaderName))
-            {
-                query = query.Where(c => c.LoaderName.Contains(searchModel.LoaderID));
-            }
+            var searchModel = controls.ToModel<SearchTransportViewModel>();
+            var query = BaseTransQuery();
             if (!string.IsNullOrEmpty(searchModel.Note))
             {
                 query = query.Where(c => c.Note.Contains(searchModel.Note));
+            }
+            if (!string.IsNullOrEmpty(searchModel.TransID))
+            {
+                query = query.Where(c => c.TransID.Contains(searchModel.TransID));
+            }
+            if (!string.IsNullOrEmpty(searchModel.TransName))
+            {
+                query = query.Where(c => c.TransName.Contains(searchModel.TransName));
             }
             return query.ToList().ToSortableBindingList();
         }
@@ -72,12 +71,12 @@ namespace Service.Implements
         {
            new ControlViewModel()
                     {
-                        Control = new TextBox(){Name = "LoaderID",Size = new Size(199,20)},
+                        Control = new TextBox(){Name = "TransID",Size = new Size(199,20)},
                         Label = new Label() {Text = "Mã bốc xếp",TextAlign = ContentAlignment.MiddleLeft}
                     },
            new ControlViewModel()
                     {
-                        Control = new TextBox(){Name = "LoaderName",Size = new Size(199,20)},
+                        Control = new TextBox(){Name = "TransName",Size = new Size(199,20)},
                         Label = new Label() {Text = "Tên bốc xếp",TextAlign = ContentAlignment.MiddleLeft}
                     },
            new ControlViewModel()
@@ -93,12 +92,12 @@ namespace Service.Implements
         };
         public ValidationModel Create(TableLayoutControlCollection controls)
         {
-            var viewModel = controls.ToModel<AddLoaderViewModel>();
+            var viewModel = controls.ToModel<AddTransportViewModel>();
             var modelState = viewModel.ModelState();
             if (modelState.IsValid)
             {
-                var model = Mapper.Map<AddLoaderViewModel, tblIndexLoader>(viewModel);
-                HongLienDb.tblIndexLoaders.Add(model);
+                var model = Mapper.Map<AddTransportViewModel, tblIndexTransport>(viewModel);
+                HongLienDb.tblIndexTransports.Add(model);
                 HongLienDb.SaveChanges();
             }
             return modelState;
@@ -106,8 +105,8 @@ namespace Service.Implements
 
         public void Delete(object currentRowDataBoundItem)
         {
-            var viewModel = (LoaderViewModel)currentRowDataBoundItem;
-            this.Delete<tblIndexLoader>(viewModel.KeyAutoID);
+            var viewModel = (TransportViewModel)currentRowDataBoundItem;
+            this.Delete<tblIndexTransport>(viewModel.KeyAutoID);
         }
 
         public void HiddentColumns(DataGridView danhMucGridView)
@@ -117,11 +116,11 @@ namespace Service.Implements
 
         public ValidationModel Update(TableLayoutControlCollection controls)
         {
-            var viewModel = controls.ToModel<UpdateLoaderViewModel>();
+            var viewModel = controls.ToModel<UpdateTransportViewModel>();
             var modelState = viewModel.ModelState();
             if (modelState.IsValid)
             {
-                var model = Mapper.Map<UpdateLoaderViewModel, tblIndexLoader>(viewModel);
+                var model = Mapper.Map<UpdateTransportViewModel, tblIndexTransport>(viewModel);
                 base.Update(model);
             }
             return modelState;
