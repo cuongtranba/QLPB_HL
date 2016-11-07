@@ -143,11 +143,13 @@
     <Compile Include="tblSysUserRight.cs" />
     <Compile Include="tblSysWorkingLock.cs" />
     <Compile Include="tblSysWorkingPeriod.cs" />
+    <Compile Include="ViewModel\CustomViewModel.cs" />
     <Compile Include="ViewModel\DocumentViewModel.cs" />
     <Compile Include="ViewModel\GridViewHeaderViewModel.cs" />
     <Compile Include="ViewModel\ItemViewModel.cs" />
     <Compile Include="ViewModel\LoaderViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\ObjectViewModel.cs" />
     <Compile Include="ViewModel\QueryParameterViewModel.cs" />
     <Compile Include="ViewModel\SearchItemViewModel.cs" />
     <Compile Include="ViewModel\SearchLoaderViewModel.cs" />

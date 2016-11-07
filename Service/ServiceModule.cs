@@ -16,6 +16,7 @@ namespace Service
             builder.Register(context => new StockCategoryService(context.Resolve<HongLienDb>())).Named<ICategoryService>(Constant.CategoryStock).InstancePerMatchingLifetimeScope("FormScope");
             builder.Register(context => new LoaderCategoryService(context.Resolve<HongLienDb>())).Named<ICategoryService>(Constant.CategoryLoader).InstancePerMatchingLifetimeScope("FormScope");
             builder.Register(context => new TransportCategoryService(context.Resolve<HongLienDb>())).Named<ICategoryService>(Constant.CategoryTransport).InstancePerMatchingLifetimeScope("FormScope");
+            builder.Register(context => new CustomerCategoryService(context.Resolve<HongLienDb>())).Named<ICategoryService>(Constant.CustomerCategory).InstancePerMatchingLifetimeScope("FormScope");
             base.Load(builder);
         }
     }
