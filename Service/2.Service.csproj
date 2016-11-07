@@ -85,6 +85,7 @@
     <Compile Include="Implements\CustomerCategoryService.cs" />
     <Compile Include="Implements\DocumentService.cs" />
     <Compile Include="Implements\CategoryItemService.cs" />
+    <Compile Include="Implements\FeeCategoryService.cs" />
     <Compile Include="Implements\LoaderCategoryService.cs" />
     <Compile Include="Implements\StockCategoryService.cs" />
     <Compile Include="Implements\TransportCategoryService.cs" />

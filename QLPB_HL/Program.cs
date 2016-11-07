@@ -62,6 +62,9 @@ namespace QLPB_HL
                 cfg.CreateMap<tblIndexAccount, AccountViewModel>();
                 cfg.CreateMap<UpdateAccountViewMode, tblIndexAccount>();
                 cfg.CreateMap<AddAccountViewModel, tblIndexAccount>();
+
+                cfg.CreateMap<UpdateFeeViewModel, tblIndexFee>();
+                cfg.CreateMap<CreateFeeViewModel, tblIndexFee>();
             });
         }
 

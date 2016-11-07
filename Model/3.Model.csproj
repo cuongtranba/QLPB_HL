@@ -146,6 +146,7 @@
     <Compile Include="tblSysWorkingPeriod.cs" />
     <Compile Include="ViewModel\CustomViewModel.cs" />
     <Compile Include="ViewModel\DocumentViewModel.cs" />
+    <Compile Include="ViewModel\FeeViewModel.cs" />
     <Compile Include="ViewModel\GridViewHeaderViewModel.cs" />
     <Compile Include="ViewModel\ItemViewModel.cs" />
     <Compile Include="ViewModel\LoaderViewModel.cs" />
