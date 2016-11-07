@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper\QueryBuilderHelper.cs" />
+    <Compile Include="Implements\AccountCategoryService.cs" />
     <Compile Include="Implements\BaseService.cs" />
     <Compile Include="Implements\CustomerCategoryService.cs" />
     <Compile Include="Implements\DocumentService.cs" />

@@ -90,6 +90,7 @@
     <Compile Include="Migrations\201611010321121_aaaa.Designer.cs">
       <DependentUpon>201611010321121_aaaa.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AccountViewModel.cs" />
     <Compile Include="ViewModel\AddLoaderViewModel.cs" />
     <Compile Include="ViewModel\AddStockViewModel.cs" />
     <Compile Include="ViewModel\AddUpdateItemViewModel.cs" />
