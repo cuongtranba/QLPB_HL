@@ -11,5 +11,6 @@ namespace _4.Helper
         public static string CustomerCategory = "Danh mục khách hàng";
         public static string AccountCategory = "Danh mục tài khoản";
         public static string FeeCategory = "Danh mục chi phí";
+        public static string InOutReasonCategory = "Lý do nhập xuất";
     }
 }

@@ -65,6 +65,9 @@ namespace QLPB_HL
 
                 cfg.CreateMap<UpdateFeeViewModel, tblIndexFee>();
                 cfg.CreateMap<CreateFeeViewModel, tblIndexFee>();
+
+                cfg.CreateMap<UpdateInOutReasonViewModel, tblIndexInOutReason>();
+                cfg.CreateMap<CreateInOutReasonViewModel, InOutReasonViewModel>();
             });
         }
 
