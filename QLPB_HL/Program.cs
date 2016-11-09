@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using System.Threading;
 using System.Windows.Forms;
 using Autofac;
 using AutoMapper;
@@ -29,7 +30,6 @@ namespace QLPB_HL
             Application.DoEvents();
             var loginForm = FormFactory.CreateForm<frmLogin>();
             loginForm.ShowDialog();
-            
             if (loginForm.DialogResult == DialogResult.OK)
             {
                 var mainForm = FormFactory.CreateForm<frmMidi>();
@@ -40,7 +40,7 @@ namespace QLPB_HL
                 }
                 catch (Exception exception)
                 {
-                    log.Error(exception.Message,exception);
+                    log.Error(exception.Message, exception);
                     MessageBox.Show(exception.Message, "lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -63,7 +63,7 @@ namespace QLPB_HL
                 cfg.CreateMap<SearchLoaderViewModel, tblIndexLoader>();
                 cfg.CreateMap<AddLoaderViewModel, tblIndexLoader>();
 
-                cfg.CreateMap<tblIndexTransport,TransportViewModel>();
+                cfg.CreateMap<tblIndexTransport, TransportViewModel>();
                 cfg.CreateMap<UpdateTransportViewModel, tblIndexTransport>();
                 cfg.CreateMap<AddTransportViewModel, tblIndexTransport>();
 
@@ -101,5 +101,6 @@ namespace QLPB_HL
             var container = builder.Build();
             return container;
         }
+
     }
 }

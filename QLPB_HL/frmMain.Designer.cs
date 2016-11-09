@@ -1330,6 +1330,7 @@
             this.button40.TabIndex = 8;
             this.button40.Text = "Danh mục";
             this.button40.UseVisualStyleBackColor = true;
+            this.button40.Visible = false;
             this.button40.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
             this.button40.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 

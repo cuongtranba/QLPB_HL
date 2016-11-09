@@ -11,8 +11,10 @@ namespace Model.ViewModel
             KeyAutoID = Guid.NewGuid().ToString();
         }
         [Required(ErrorMessage = "Thiếu mã hàng")]
+        [StringLength(50)]
         public string ItemID { get; set; }
         [Required(ErrorMessage = "Thiếu tên hàng")]
+        [StringLength(150)]
         public string ItemName { get; set; }
         [Required(ErrorMessage = "Thiếu đơn vị")]
         public string UnitID { get; set; }
@@ -24,6 +26,7 @@ namespace Model.ViewModel
         public decimal BuyPrice { get; set; }
         [Required(ErrorMessage = "Thiếu tiền bán")]
         public decimal SalePrice { get; set; }
+        [StringLength(150)]
         public string Note { get; set; }
     }
 
@@ -31,8 +34,10 @@ namespace Model.ViewModel
     {
         public string KeyAutoID { get; set; }
         [Required(ErrorMessage = "Thiếu mã hàng")]
+        [StringLength(50)]
         public string ItemID { get; set; }
         [Required(ErrorMessage = "Thiếu tên hàng")]
+        [StringLength(150)]
         public string ItemName { get; set; }
         [Required(ErrorMessage = "Thiếu đơn vị")]
         public string UnitID { get; set; }
@@ -44,6 +49,7 @@ namespace Model.ViewModel
         public decimal BuyPrice { get; set; }
         [Required(ErrorMessage = "Thiếu tiền bán")]
         public decimal SalePrice { get; set; }
+        [StringLength(150)]
         public string Note { get; set; }
     }
 }
