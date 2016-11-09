@@ -3,15 +3,17 @@ using System.Reflection;
 using System.Windows.Forms;
 using Autofac;
 using AutoMapper;
+using log4net;
+using log4net.Config;
 using Model;
 using Model.ViewModel;
 using Service;
-
 namespace QLPB_HL
 {
     static class Program
     {
         public static IContainer Container;
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         /// <summary>
         /// The main entry point for the application.
@@ -19,6 +21,7 @@ namespace QLPB_HL
         [STAThread]
         static void Main()
         {
+            XmlConfigurator.Configure();
             Container = RegisterIOC();
             RegisterAutoMapper();
             Application.EnableVisualStyles();
@@ -26,11 +29,20 @@ namespace QLPB_HL
             Application.DoEvents();
             var loginForm = FormFactory.CreateForm<frmLogin>();
             loginForm.ShowDialog();
+            
             if (loginForm.DialogResult == DialogResult.OK)
             {
                 var mainForm = FormFactory.CreateForm<frmMidi>();
                 Global.clsVar.fMain = mainForm;
-                mainForm.ShowDialog();
+                try
+                {
+                    mainForm.ShowDialog();
+                }
+                catch (Exception exception)
+                {
+                    log.Error(exception.Message,exception);
+                    MessageBox.Show(exception.Message, "lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -67,7 +79,7 @@ namespace QLPB_HL
                 cfg.CreateMap<CreateFeeViewModel, tblIndexFee>();
 
                 cfg.CreateMap<UpdateInOutReasonViewModel, tblIndexInOutReason>();
-                cfg.CreateMap<CreateInOutReasonViewModel, InOutReasonViewModel>();
+                cfg.CreateMap<CreateInOutReasonViewModel, tblIndexInOutReason>();
             });
         }
 
