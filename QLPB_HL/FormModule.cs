@@ -11,8 +11,8 @@ namespace QLPB_HL
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.Register(context => new frmTonKho()).Named<Form>("Số dư đầu kỳ").InstancePerMatchingLifetimeScope("FormScope");
-            builder.Register(context => new frmTonKho()).Named<Form>("Tồn kho cuối kỳ").InstancePerMatchingLifetimeScope("FormScope"); ;
+            builder.Register(context => new frmTonKho(context.Resolve<ICommonService>(),context.Resolve<IInventoryServices>())).Named<Form>("Số dư đầu kỳ").InstancePerMatchingLifetimeScope("FormScope");
+            builder.Register(context => new frmTonKho(context.Resolve<ICommonService>(), context.Resolve<IInventoryServices>())).Named<Form>("Tồn kho cuối kỳ").InstancePerMatchingLifetimeScope("FormScope"); ;
             base.Load(builder);
         }
     }
