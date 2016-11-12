@@ -89,6 +89,7 @@
             // 
             // cbxPeriod
             // 
+            this.cbxPeriod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPeriod.FormattingEnabled = true;
             this.cbxPeriod.Location = new System.Drawing.Point(238, 100);
             this.cbxPeriod.Name = "cbxPeriod";

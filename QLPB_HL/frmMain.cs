@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Autofac;
 
 namespace QLPB_HL
 {
@@ -17,9 +18,38 @@ namespace QLPB_HL
         {
             "Danh mục hàng hóa","Danh mục kho","Danh mục bốc xếp","Danh mục phương tiện","Danh mục khách hàng","Danh mục tài khoản","Danh mục chi phí","Lý do nhập xuất","Danh mục"
         };
+        List<string> ButtonItems=new List<string>()
+        {
+            "Số dư đầu kỳ","Tồn kho cuối kỳ"
+        };
         public frmMain()
         {
             InitializeComponent();
+            var buttons = this.Controls.OfType<Panel>().ToList().SelectMany(c => c.Controls.OfType<Button>()).ToList();
+            HandleButton(ButtonItems, buttons);
+        }
+
+        private void HandleButton(List<string> buttonItems, List<Button> buttons)
+        {
+            if (buttons.Any(c=>buttonItems.Contains(c.Text)))
+            {
+                var buttonfilters = buttons.Where(c => buttonItems.Contains(c.Text)).ToList();
+                foreach (var buttonfilter in buttonfilters)
+                {
+                    buttonfilter.Click += Buttonfilter_Click;
+                }
+            }
+        }
+
+        private void Buttonfilter_Click(object sender, EventArgs e)
+        {
+            var formName = ((Button) sender).Text;
+            var form = FormFactory.CreateForm<Form>(formName);
+            form.MdiParent = Global.clsVar.fMain;
+            form.Text = formName;
+            form.Show();
+            form.BringToFront();
+            Program.DeactivePanel();
         }
 
         private void mnuKeToanL_Click(object sender, EventArgs e)

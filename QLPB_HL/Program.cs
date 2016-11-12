@@ -93,11 +93,10 @@ namespace QLPB_HL
             var builder = new ContainerBuilder();
             builder.RegisterModule<ServiceModule>();
             builder.RegisterModule<ORMModule>();
-            //register form
             var assembly = Assembly.GetExecutingAssembly();
             builder.RegisterAssemblyTypes(assembly)
                 .Where(type => type.IsSubclassOf(typeof(Form))).InstancePerMatchingLifetimeScope("FormScope");
-
+            builder.RegisterModule<FormModule>();
             var container = builder.Build();
             return container;
         }

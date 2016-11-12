@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Threading.Tasks;
 using Model;
 using Model.ViewModel;
@@ -18,6 +19,11 @@ namespace Service.Implements
                 HongLienDb.tblSysUsers.AsNoTracking()
                     .AnyAsync(c => c.UserID == model.UserName && c.UserPass == model.Password);
             return await result;
+        }
+
+        public async Task<List<ComboboxItem>> GetUserWorkingDay()
+        {
+            return new List<ComboboxItem>();
         }
     }
 }
