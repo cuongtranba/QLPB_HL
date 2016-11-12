@@ -157,6 +157,7 @@
     <Compile Include="ViewModel\FeeViewModel.cs" />
     <Compile Include="ViewModel\GridViewHeaderViewModel.cs" />
     <Compile Include="ViewModel\InOutReasonViewModel.cs" />
+    <Compile Include="ViewModel\InventoryViewModel.cs" />
     <Compile Include="ViewModel\ItemViewModel.cs" />
     <Compile Include="ViewModel\LoaderViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />

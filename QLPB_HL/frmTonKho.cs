@@ -7,13 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Service.Interfaces;
 
 namespace QLPB_HL
 {
     public partial class frmTonKho : Form
     {
-        public frmTonKho()
+        private ICommonService commonService;
+        private IInventoryServices inventoryServices;
+        public frmTonKho(ICommonService commonService, IInventoryServices inventoryServices)
         {
+            this.commonService = commonService;
+            this.inventoryServices = inventoryServices;
             InitializeComponent();
         }
     }
