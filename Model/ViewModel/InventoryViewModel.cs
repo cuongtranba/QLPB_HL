@@ -22,5 +22,9 @@ namespace Model.ViewModel
         public decimal Amount { get; set; }
         [HiddenColumn]
         public string GroupID { get; set; }
+        [DisplayName("Tên kho")]
+        public string StockName { get; set; }
+        [DisplayName("Tên nhóm")]
+        public string GroupName { get; set; }
     }
 }

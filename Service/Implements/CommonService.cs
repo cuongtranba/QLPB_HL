@@ -17,8 +17,7 @@ namespace Service.Implements
 
         public async Task<List<ComboboxItem>> GetStock()
         {
-            return await
-                HongLienDb.tblIndexStocks.AsNoTracking()
+            var model= await HongLienDb.tblIndexStocks.AsNoTracking()
                     .Where(c => c.IsDeleted == false)
                     .Select(c => new ComboboxItem()
                     {
@@ -26,13 +25,13 @@ namespace Service.Implements
                         Value = c.KeyAutoID
                     })
                     .ToListAsync();
+            model.Insert(0, ComboboxItem.Empty);
+            return model;
         }
 
         public async Task<List<ComboboxItem>> GetItemGroup()
         {
-            return
-                await
-                    HongLienDb.tblIndexItemGroups.AsNoTracking()
+            var model = await HongLienDb.tblIndexItemGroups.AsNoTracking()
                         .Where(c => c.IsDeleted == false)
                         .Select(c => new ComboboxItem()
                         {
@@ -40,6 +39,8 @@ namespace Service.Implements
                             Value = c.KeyAutoID
                         })
                         .ToListAsync();
+            model.Insert(0, ComboboxItem.Empty);
+            return model;
         }
     }
 }
