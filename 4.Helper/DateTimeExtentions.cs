@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _4.Helper
 {
@@ -13,7 +9,7 @@ namespace _4.Helper
         /// </summary>
         /// <param name="sPeriod">format is yyyyMM</param>
         /// <returns></returns>
-        public static DateTime FirstDayOfPeriod(string sPeriod)
+        public static DateTime FirstDayOfPeriod(this string sPeriod)
         {
             if (sPeriod == "")
                 return DateTime.MinValue;
@@ -27,7 +23,7 @@ namespace _4.Helper
         /// </summary>
         /// <param name="sPeriod">format is yyyyMM</param>
         /// <returns></returns>
-        public static DateTime LastDayOfPeriod(string sPeriod)
+        public static DateTime LastDayOfPeriod(this string sPeriod)
         {
             if (sPeriod == "")
                 return DateTime.MinValue;

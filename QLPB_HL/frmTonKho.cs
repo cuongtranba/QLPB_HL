@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model.ViewModel;
+using QLPB_HL.Global;
 using Service.Interfaces;
 using _4.Helper;
 
@@ -30,6 +24,9 @@ namespace QLPB_HL
             this.comboBox_kho.DataSource = await commonService.GetStock();
             this.dataGridView_ton.DataSource = await inventoryServices.GetItems();
             this.dataGridView_ton.HiddentColumns<InventoryViewModel>();
+            label_title.Text = inventoryServices.Title;
+            var date = clsVar.sCurrentPeriod.FirstDayOfPeriod();
+            label_date.Text = $@"tháng {date.Month} năm {date.Year}" ;
         }
     }
 }

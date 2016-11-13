@@ -13,6 +13,7 @@ namespace Service.Implements
 {
     public class InventoryService : BaseService, IInventoryServices
     {
+        public string Title => "Tồn đầu kì";
         public InventoryService(HongLienDb hongLienDb) : base(hongLienDb)
         {
         }

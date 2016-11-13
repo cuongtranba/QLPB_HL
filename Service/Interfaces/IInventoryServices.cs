@@ -6,6 +6,7 @@ namespace Service.Interfaces
 {
     public interface IInventoryServices
     {
+        string Title { get; }
         Task<object> GetItems();
         Task SaveInventory(List<InventoryViewModel> inventoryViewModels);
     }
