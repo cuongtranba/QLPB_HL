@@ -9,5 +9,6 @@ namespace Service.Interfaces
         string Title { get; }
         Task<object> GetItems();
         Task SaveInventory(List<InventoryViewModel> inventoryViewModels);
+        Task<object> Search(SearchInventoryViewModel model);
     }
 }

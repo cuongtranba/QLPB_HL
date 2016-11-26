@@ -73,4 +73,10 @@ namespace Model.Helper
             }
         }
     }
+
+    public class AllowEdit : Attribute
+    {
+        
+    }
+
 }
