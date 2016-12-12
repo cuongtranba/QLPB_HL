@@ -170,6 +170,7 @@
     <Compile Include="ViewModel\TransportViewModel.cs" />
     <Compile Include="ViewModel\UpdateLoaderViewModel.cs" />
     <Compile Include="ViewModel\UpdateStockViewModel.cs" />
+    <Compile Include="ViewModel\WorkingPeriodViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

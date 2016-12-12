@@ -34,16 +34,16 @@
             this.TotalAmount = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.label_title = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.comboBox_kho = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.comboBox_loaihang = new System.Windows.Forms.ComboBox();
             this.btn_search = new System.Windows.Forms.Button();
             this.label_date = new System.Windows.Forms.Label();
-            this.label_title = new System.Windows.Forms.Label();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.panel_tonkho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ton)).BeginInit();
             this.panel1.SuspendLayout();
@@ -129,6 +129,16 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(641, 88);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
+            // label_title
+            // 
+            this.label_title.AutoSize = true;
+            this.label_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_title.Location = new System.Drawing.Point(3, 0);
+            this.label_title.Name = "label_title";
+            this.label_title.Size = new System.Drawing.Size(38, 22);
+            this.label_title.TabIndex = 4;
+            this.label_title.Text = "title";
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -141,9 +151,29 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(240, 38);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Kho";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // comboBox_kho
+            // 
+            this.comboBox_kho.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox_kho.FormattingEnabled = true;
+            this.comboBox_kho.Location = new System.Drawing.Point(55, 3);
+            this.comboBox_kho.Name = "comboBox_kho";
+            this.comboBox_kho.Size = new System.Drawing.Size(182, 21);
+            this.comboBox_kho.TabIndex = 1;
             // 
             // tableLayoutPanel3
             // 
@@ -157,20 +187,9 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(271, 38);
             this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Kho";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
@@ -181,15 +200,6 @@
             this.label2.Size = new System.Drawing.Size(49, 38);
             this.label2.TabIndex = 0;
             this.label2.Text = "Loại hàng";
-            // 
-            // comboBox_kho
-            // 
-            this.comboBox_kho.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox_kho.FormattingEnabled = true;
-            this.comboBox_kho.Location = new System.Drawing.Point(55, 3);
-            this.comboBox_kho.Name = "comboBox_kho";
-            this.comboBox_kho.Size = new System.Drawing.Size(182, 21);
-            this.comboBox_kho.TabIndex = 1;
             // 
             // comboBox_loaihang
             // 
@@ -218,16 +228,6 @@
             this.label_date.Size = new System.Drawing.Size(45, 22);
             this.label_date.TabIndex = 3;
             this.label_date.Text = "date";
-            // 
-            // label_title
-            // 
-            this.label_title.AutoSize = true;
-            this.label_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_title.Location = new System.Drawing.Point(3, 0);
-            this.label_title.Name = "label_title";
-            this.label_title.Size = new System.Drawing.Size(38, 22);
-            this.label_title.TabIndex = 4;
-            this.label_title.Text = "title";
             // 
             // frmTonKho
             // 

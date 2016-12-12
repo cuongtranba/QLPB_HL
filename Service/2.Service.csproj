@@ -93,11 +93,13 @@
     <Compile Include="Implements\StockCategoryService.cs" />
     <Compile Include="Implements\TransportCategoryService.cs" />
     <Compile Include="Implements\UserService.cs" />
+    <Compile Include="Implements\WorkingPeriodService.cs" />
     <Compile Include="Interfaces\ICommonService.cs" />
     <Compile Include="Interfaces\IDocumentService.cs" />
     <Compile Include="Interfaces\ICategoryService.cs" />
     <Compile Include="Interfaces\IInventoryServices.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
+    <Compile Include="Interfaces\IWorkingPeriodService.cs" />
     <Compile Include="ServiceModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

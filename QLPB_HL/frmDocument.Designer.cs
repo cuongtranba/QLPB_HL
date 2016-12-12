@@ -55,6 +55,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.gridView2 = new _4.Helper.UserControls.GridView();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
@@ -79,6 +80,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.textBox11 = new System.Windows.Forms.TextBox();
+            this.gridView3 = new _4.Helper.UserControls.GridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnLoadData = new System.Windows.Forms.Button();
@@ -86,6 +88,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.dgvBangKe = new _4.Helper.UserControls.GridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.button1 = new System.Windows.Forms.Button();
@@ -93,9 +96,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.label21 = new System.Windows.Forms.Label();
-            this.gridView2 = new _4.Helper.UserControls.GridView();
-            this.gridView3 = new _4.Helper.UserControls.GridView();
-            this.dgvBangKe = new _4.Helper.UserControls.GridView();
             this.gridView4 = new _4.Helper.UserControls.GridView();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -105,23 +105,23 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBangKe)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBangKe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.SuspendLayout();
             // 
@@ -381,6 +381,19 @@
             this.label14.TabIndex = 23;
             this.label14.Text = "HTTT";
             // 
+            // gridView2
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.gridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridView2.Location = new System.Drawing.Point(0, 136);
+            this.gridView2.Name = "gridView2";
+            this.gridView2.Size = new System.Drawing.Size(687, 180);
+            this.gridView2.TabIndex = 22;
+            // 
             // textBox5
             // 
             this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -611,6 +624,17 @@
             this.textBox11.Size = new System.Drawing.Size(322, 20);
             this.textBox11.TabIndex = 27;
             // 
+            // gridView3
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.gridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.gridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridView3.Location = new System.Drawing.Point(0, 0);
+            this.gridView3.Name = "gridView3";
+            this.gridView3.Size = new System.Drawing.Size(322, 347);
+            this.gridView3.TabIndex = 23;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.splitContainer1);
@@ -693,6 +717,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Từ ngày";
             // 
+            // dgvBangKe
+            // 
+            this.dgvBangKe.AllowUserToAddRows = false;
+            this.dgvBangKe.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dgvBangKe.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvBangKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBangKe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBangKe.Location = new System.Drawing.Point(0, 0);
+            this.dgvBangKe.Name = "dgvBangKe";
+            this.dgvBangKe.Size = new System.Drawing.Size(1016, 342);
+            this.dgvBangKe.TabIndex = 0;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.splitContainer4);
@@ -772,43 +809,6 @@
             this.label21.TabIndex = 5;
             this.label21.Text = "Từ ngày";
             // 
-            // gridView2
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.gridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridView2.Location = new System.Drawing.Point(0, 136);
-            this.gridView2.Name = "gridView2";
-            this.gridView2.Size = new System.Drawing.Size(687, 180);
-            this.gridView2.TabIndex = 22;
-            // 
-            // gridView3
-            // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.gridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.gridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridView3.Location = new System.Drawing.Point(0, 0);
-            this.gridView3.Name = "gridView3";
-            this.gridView3.Size = new System.Drawing.Size(322, 347);
-            this.gridView3.TabIndex = 23;
-            // 
-            // dgvBangKe
-            // 
-            this.dgvBangKe.AllowUserToAddRows = false;
-            this.dgvBangKe.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dgvBangKe.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvBangKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBangKe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvBangKe.Location = new System.Drawing.Point(0, 0);
-            this.dgvBangKe.Name = "dgvBangKe";
-            this.dgvBangKe.Size = new System.Drawing.Size(1016, 342);
-            this.dgvBangKe.TabIndex = 0;
-            // 
             // gridView4
             // 
             this.gridView4.AllowUserToAddRows = false;
@@ -842,26 +842,26 @@
             this.splitContainer2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel1.PerformLayout();
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBangKe)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
             this.splitContainer4.Panel1.PerformLayout();
             this.splitContainer4.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBangKe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
