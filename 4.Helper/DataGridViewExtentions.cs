@@ -101,7 +101,6 @@ namespace _4.Helper
             }
             return dataGridView;
         }
-
         public static SortableBindingList<T> ToSortableBindingList<T>(this List<T> list) where T : class
         {
             var sortableBindingList = new SortableBindingList<T>();
@@ -113,6 +112,19 @@ namespace _4.Helper
                 serial += 1;
             }
             return sortableBindingList;
+        }
+
+        public static DataGridView EnableEditColumns<T>(this DataGridView dataGridView)
+        {
+            var editColumns = typeof(T).GetProperties().Where(prop => Attribute.IsDefined(prop, typeof(AllowEdit))).ToList();
+            for (int i = 0; i < dataGridView.ColumnCount; i++)
+            {
+                foreach (var editColumn in editColumns)
+                {
+                    dataGridView.Columns[editColumn.Name].ReadOnly = false;
+                }
+            }
+            return dataGridView;
         }
     }
 }

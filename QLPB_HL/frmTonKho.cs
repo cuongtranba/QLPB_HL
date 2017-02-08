@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model.ViewModel;
 using QLPB_HL.Global;
@@ -20,13 +21,28 @@ namespace QLPB_HL
 
         private async void frmTonKho_Load(object sender, EventArgs e)
         {
-            this.comboBox_loaihang.DataSource = await commonService.GetItemGroup();
-            this.comboBox_kho.DataSource = await commonService.GetStock();
-            this.dataGridView_ton.DataSource = await inventoryServices.GetItems();
             this.dataGridView_ton.HiddentColumns<InventoryViewModel>();
+
+            var itemGroup = commonService.GetItemGroup();
+            var stock = commonService.GetStock();
+            var items = inventoryServices.GetItems();
+
+            await Task.WhenAll(itemGroup, stock, items);
+
+            this.GroupID.DataSource = itemGroup.Result;
+            this.StockId.DataSource = stock.Result;
+            this.dataGridView_ton.DataSource = items.Result;
+
             label_title.Text = inventoryServices.Title;
             var date = clsVar.sCurrentPeriod.FirstDayOfPeriod();
             label_date.Text = $@"tháng {date.Month} năm {date.Year}" ;
+        }
+
+        private async void btn_search_Click(object sender, EventArgs e)
+        {
+            var searchViewModel=new SearchInventoryViewModel();
+            this.panel_search.Controls.ToModel(searchViewModel);
+            this.dataGridView_ton.DataSource = await inventoryServices.Search(searchViewModel);
         }
     }
 }
