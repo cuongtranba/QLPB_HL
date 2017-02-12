@@ -13,10 +13,15 @@ namespace Service.Implements
 {
     public class WorkingPeriodService : BaseService, IWorkingPeriodService
     {
-        public IQueryable<WorkingPeriodViewModel> GetWorkingPeriodList()
+        
+        public List<ComboboxItem> GetList()
         {
-            var result = HongLienDb.tblSysWorkingPeriods.AsNoTracking().ProjectTo(WorkingPeriodViewModel);
-            return result;
+            var model = HongLienDb.tblSysWorkingPeriods.Where(c=>c.IsDeleted == false).
+                 Select(w => new ComboboxItem()
+                 {
+                 }).ToList();
+            model.Insert(0, ComboboxItem.Empty);
+            return model;
         }
 
         public Task<bool> InitWorkingPeriod(string sPeriod)

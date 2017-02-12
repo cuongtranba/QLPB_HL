@@ -9,9 +9,10 @@ namespace Service.Implements
 {
     public class UserService : BaseService, IUserService
     {
+        WorkingPeriodService wSer;
         public UserService(HongLienDb hongLienDb) : base(hongLienDb)
         {
-
+            wSer = new WorkingPeriodService(hongLienDb);
         }
         public async Task<bool> Login(LoginViewModel model)
         {
@@ -23,7 +24,7 @@ namespace Service.Implements
 
         public async Task<List<ComboboxItem>> GetUserWorkingDay()
         {
-            return new List<ComboboxItem>();
+            return wSer.GetList();
         }
     }
 }

@@ -10,6 +10,6 @@ namespace Service.Interfaces
     public interface IWorkingPeriodService 
     {
         Task<bool> InitWorkingPeriod(string sPeriod);
-        IQueryable<WorkingPeriodViewModel> GetWorkingPeriodList();
+        List<ComboboxItem> GetList();
     }
 }
