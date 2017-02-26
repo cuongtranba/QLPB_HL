@@ -80,6 +80,8 @@ namespace QLPB_HL
 
                 cfg.CreateMap<UpdateInOutReasonViewModel, tblIndexInOutReason>();
                 cfg.CreateMap<CreateInOutReasonViewModel, tblIndexInOutReason>();
+
+                cfg.CreateMap<WorkingPeriodViewModel, tblSysWorkingPeriod>();
             });
         }
 

@@ -6,6 +6,7 @@ namespace Service.Interfaces
 {
     public interface ICommonService
     {
+        Task<List<ComboboxItem>> GetCustomer();
         Task<List<ComboboxItem>> GetStock();
         Task<List<ComboboxItem>> GetItemGroup();
     }

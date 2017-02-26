@@ -113,16 +113,28 @@ namespace QLPB_HL
             if (NameMethode.Contains("MouseEnter"))
             {
                 if (sAlign == "T")
+                {
                     cmdButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+                    cmdButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                }
                 else if (sAlign == "C")
+                {
                     cmdButton.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+                    cmdButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+                }
             }
             else if (NameMethode.Contains("MouseLeave"))
             {
                 if (sAlign == "T")
+                {
                     cmdButton.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+                    cmdButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+                }
                 else if (sAlign == "C")
+                {
                     cmdButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+                    cmdButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                }
             }
         }
 
@@ -160,6 +172,21 @@ namespace QLPB_HL
             frmDocument.Text = ((Button)sender).Text;
             frmDocument.sDocumentCode = "002";
             frmDocument.Show();
+        }
+
+        private void button63_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button62_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button64_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -53,5 +53,11 @@ namespace _4.Helper
             DateTime dtime = new DateTime(yyyy, mm, dd);
             return dtime;
         }
+
+        public static string PeriodToStringVN(string sPeriod)
+        {
+            DateTime dtime = FirstDayOfPeriod(sPeriod);
+            return dtime.ToString("Tháng MM/yyyy");
+        }
     }
 }

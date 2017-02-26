@@ -899,6 +899,7 @@
             this.button64.Text = "Báo cáo kho tổng hợp";
             this.button64.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button64.UseVisualStyleBackColor = true;
+            this.button64.Click += new System.EventHandler(this.button64_Click);
             this.button64.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
             this.button64.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
@@ -915,6 +916,7 @@
             this.button63.Text = "Tồn kho cuối kỳ";
             this.button63.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button63.UseVisualStyleBackColor = true;
+            this.button63.Click += new System.EventHandler(this.button63_Click);
             this.button63.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
             this.button63.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 
@@ -931,6 +933,7 @@
             this.button62.Text = "Số dư đầu kỳ";
             this.button62.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button62.UseVisualStyleBackColor = true;
+            this.button62.Click += new System.EventHandler(this.button62_Click);
             this.button62.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
             this.button62.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             // 

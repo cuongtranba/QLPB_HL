@@ -18,11 +18,13 @@ namespace QLPB_HL
         public string sDocumentCode = "001";
         private string sPeriod = "";
         private IDocumentService documentService;
-        public frmDocument(IDocumentService DocumentService)
+        private ICommonService commonService;
+        public frmDocument(IDocumentService DocumentService, ICommonService commonService)
         {
             InitializeComponent();
             sPeriod = Global.clsVar.sCurrentPeriod;
             this.documentService = DocumentService;
+            this.commonService = commonService;
             if (sDocumentCode == "002")
                 sDocumentType = "PX";
             else
@@ -35,6 +37,7 @@ namespace QLPB_HL
         {
             this.dtpFrom.Value = DateTimeExtentions.FirstDayOfPeriod(sPeriod);
             this.dtpTo.Value = DateTimeExtentions.LastDayOfPeriod(sPeriod);
+            LoadComboBox();
             LoadData();
             if (this.tabControl1.SelectedTab != this.tabPage2)
                 this.tabControl1.SelectedTab = this.tabPage2;
@@ -43,6 +46,12 @@ namespace QLPB_HL
         private void btnLoadData_Click(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void LoadComboBox()
+        {
+            var customer = commonService.GetCustomer();
+            this.comboBox1.DataSource = customer.Result;
         }
 
         private void LoadData()
@@ -61,7 +70,10 @@ namespace QLPB_HL
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            if(tabControl1.SelectedTab != tabPage1)
+            {
+                tabControl1.SelectedTab = tabPage1;
+            }
         }
     }
 }
