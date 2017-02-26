@@ -33,11 +33,11 @@ namespace QLPB_HL
             }
         }
 
-        private void frmDocument_Load(object sender, EventArgs e)
+        private async void frmDocument_Load(object sender, EventArgs e)
         {
             this.dtpFrom.Value = DateTimeExtentions.FirstDayOfPeriod(sPeriod);
             this.dtpTo.Value = DateTimeExtentions.LastDayOfPeriod(sPeriod);
-            LoadComboBox();
+            await LoadComboBox();
             LoadData();
             if (this.tabControl1.SelectedTab != this.tabPage2)
                 this.tabControl1.SelectedTab = this.tabPage2;
@@ -48,10 +48,10 @@ namespace QLPB_HL
             LoadData();
         }
 
-        private void LoadComboBox()
+        private async Task LoadComboBox()
         {
-            var customer = commonService.GetCustomer();
-            this.comboBox1.DataSource = customer.Result;
+            var customer = await commonService.GetCustomer();
+            this.comboBox1.DataSource = customer;
         }
 
         private void LoadData()
@@ -70,7 +70,7 @@ namespace QLPB_HL
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(tabControl1.SelectedTab != tabPage1)
+            if (tabControl1.SelectedTab != tabPage1)
             {
                 tabControl1.SelectedTab = tabPage1;
             }
