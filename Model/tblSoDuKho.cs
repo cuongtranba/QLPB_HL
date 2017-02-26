@@ -32,28 +32,28 @@ namespace Model
         [StringLength(50)]
         public string UnitID { get; set; }
 
-        public double? OpenQty { get; set; }
+        public double OpenQty { get; set; }
 
-        public double? OpenUnitPrice { get; set; }
+        public double OpenUnitPrice { get; set; }
 
-        public double? InPeriodQty { get; set; }
+        public double InPeriodQty { get; set; }
 
-        public double? InputUnitPrice { get; set; }
+        public double InputUnitPrice { get; set; }
 
-        public double? OutPeriodQty { get; set; }
+        public double OutPeriodQty { get; set; }
 
-        public double? OutputUnitPrice { get; set; }
+        public double OutputUnitPrice { get; set; }
 
-        public double? CloseQty { get; set; }
+        public double CloseQty { get; set; }
 
-        public double? CloseUnitPrice { get; set; }
+        public double CloseUnitPrice { get; set; }
 
-        public double? OpenAmount { get; set; }
+        public double OpenAmount { get; set; }
 
-        public double? InputAmount { get; set; }
+        public double InputAmount { get; set; }
 
-        public double? OutputAmount { get; set; }
+        public double OutputAmount { get; set; }
 
-        public double? CloseAmount { get; set; }
+        public double CloseAmount { get; set; }
     }
 }

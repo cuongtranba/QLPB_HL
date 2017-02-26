@@ -21,17 +21,22 @@ namespace QLPB_HL
 
         private async void frmTonKho_Load(object sender, EventArgs e)
         {
-            this.dataGridView_ton.HiddentColumns<InventoryViewModel>();
 
             var itemGroup = commonService.GetItemGroup();
             var stock = commonService.GetStock();
             var items = inventoryServices.GetItems();
+            var totalAmount = inventoryServices.GetSum(clsVar.sCurrentPeriod);
 
-            await Task.WhenAll(itemGroup, stock, items);
+            await Task.WhenAll(itemGroup, stock, items, totalAmount);
 
             this.GroupID.DataSource = itemGroup.Result;
             this.StockId.DataSource = stock.Result;
             this.dataGridView_ton.DataSource = items.Result;
+            this.Total_label.Text = $"Tổng: {totalAmount.Result}";
+
+
+            this.dataGridView_ton.HiddentColumns<InventoryViewModel>();
+
 
             label_title.Text = inventoryServices.Title;
             var date = clsVar.sCurrentPeriod.FirstDayOfPeriod();
@@ -43,6 +48,14 @@ namespace QLPB_HL
             var searchViewModel=new SearchInventoryViewModel();
             this.panel_search.Controls.ToModel(searchViewModel);
             this.dataGridView_ton.DataSource = await inventoryServices.Search(searchViewModel);
+        }
+
+        private async void dataGridView_ton_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView_ton.CurrentRow != null)
+            {
+                await inventoryServices.Create(dataGridView_ton.CurrentRow.DataBoundItem, clsVar.sCurrentPeriod);
+            }
         }
     }
 }

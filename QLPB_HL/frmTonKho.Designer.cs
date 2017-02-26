@@ -32,7 +32,7 @@
             this.dataGridView_ton = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TotalAmount = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.Total_label = new System.Windows.Forms.Label();
             this.panel_search = new System.Windows.Forms.TableLayoutPanel();
             this.label_title = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -78,14 +78,14 @@
             this.dataGridView_ton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_ton.Location = new System.Drawing.Point(3, 97);
             this.dataGridView_ton.Name = "dataGridView_ton";
-            this.dataGridView_ton.ReadOnly = true;
             this.dataGridView_ton.Size = new System.Drawing.Size(641, 422);
             this.dataGridView_ton.TabIndex = 1;
+            this.dataGridView_ton.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_ton_CellValueChanged);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.TotalAmount);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.Total_label);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 525);
             this.panel1.Name = "panel1";
@@ -100,15 +100,15 @@
             this.TotalAmount.Size = new System.Drawing.Size(0, 13);
             this.TotalAmount.TabIndex = 1;
             // 
-            // label3
+            // Total_label
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(348, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 20);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Cộng tiền:";
+            this.Total_label.AutoSize = true;
+            this.Total_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Total_label.Location = new System.Drawing.Point(348, 0);
+            this.Total_label.Name = "Total_label";
+            this.Total_label.Size = new System.Drawing.Size(91, 20);
+            this.Total_label.TabIndex = 0;
+            this.Total_label.Text = "Cộng tiền:";
             // 
             // panel_search
             // 
@@ -260,7 +260,7 @@
         private System.Windows.Forms.DataGridView dataGridView_ton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label TotalAmount;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label Total_label;
         private System.Windows.Forms.TableLayoutPanel panel_search;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;

@@ -98,6 +98,10 @@
     <Compile Include="Migrations\201611090550239_delete-log.Designer.cs">
       <DependentUpon>201611090550239_delete-log.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611270455468_update-table.cs" />
+    <Compile Include="Migrations\201611270455468_update-table.Designer.cs">
+      <DependentUpon>201611270455468_update-table.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\AccountViewModel.cs" />
     <Compile Include="ViewModel\AddLoaderViewModel.cs" />
     <Compile Include="ViewModel\AddStockViewModel.cs" />
@@ -211,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611090550239_delete-log.resx">
       <DependentUpon>201611090550239_delete-log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611270455468_update-table.resx">
+      <DependentUpon>201611270455468_update-table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

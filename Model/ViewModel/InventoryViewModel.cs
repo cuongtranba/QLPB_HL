@@ -20,7 +20,7 @@ namespace Model.ViewModel
         public int Quantity { get; set; }
         [DisplayName("Đơn giá")]
         [AllowEdit]
-        public decimal UnitPrice { get; set; }
+        public double UnitPrice { get; set; }
         [DisplayName("Thành tiền")]
         public decimal Amount { get; set; }
         [HiddenColumn]

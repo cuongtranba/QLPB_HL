@@ -32,10 +32,10 @@ namespace QLPB_HL
             loginForm.ShowDialog();
             if (loginForm.DialogResult == DialogResult.OK)
             {
-                var mainForm = FormFactory.CreateForm<frmMidi>();
-                Global.clsVar.fMain = mainForm;
                 try
                 {
+                    var mainForm = FormFactory.CreateForm<frmMidi>();
+                    Global.clsVar.fMain = mainForm;
                     mainForm.ShowDialog();
                 }
                 catch (Exception exception)

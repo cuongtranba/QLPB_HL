@@ -113,7 +113,6 @@ namespace _4.Helper
             }
             return sortableBindingList;
         }
-
         public static DataGridView EnableEditColumns<T>(this DataGridView dataGridView)
         {
             var editColumns = typeof(T).GetProperties().Where(prop => Attribute.IsDefined(prop, typeof(AllowEdit))).ToList();
@@ -121,7 +120,7 @@ namespace _4.Helper
             {
                 foreach (var editColumn in editColumns)
                 {
-                    dataGridView.Columns[editColumn.Name].ReadOnly = false;
+                    dataGridView.Columns[editColumn.Name].ReadOnly = true;
                 }
             }
             return dataGridView;

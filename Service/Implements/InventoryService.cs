@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace Service.Implements
     public class InventoryService : BaseService, IInventoryServices
     {
         public string Title => "Tồn đầu kì";
+
         public InventoryService(HongLienDb hongLienDb) : base(hongLienDb)
         {
         }
@@ -22,27 +24,53 @@ namespace Service.Implements
         public IQueryable<InventoryViewModel> GetItemsQuery()
         {
             var query = from p1 in HongLienDb.tblIndexItems.AsNoTracking().AsExpandable()
-                        join p2 in HongLienDb.tblIndexStocks.AsNoTracking() on p1.StockID equals p2.KeyAutoID into itemsStock
-                        from p2 in itemsStock.DefaultIfEmpty()
-                        join p3 in HongLienDb.tblIndexItemGroups.AsNoTracking().AsExpandable() on p1.GroupID equals p3.KeyAutoID
-                        into itemGroup
-                        from p3 in itemGroup.DefaultIfEmpty()
-                        where p1.IsDeleted == false
-                        select new InventoryViewModel()
-                        {
-                            ItemName = p1.ItemName,
-                            GroupName = p3.GroupName,
-                            GroupID = p3.KeyAutoID,
-                            ItemId = p1.ItemID,
-                            ItemIdDisplay = p1.ItemID,
-                            StockName = p2.StockDesc,
-                            UnitId = p1.UnitID,
-                            StockId = p2.KeyAutoID
-                        };
+                join p2 in HongLienDb.tblIndexStocks.AsNoTracking() on p1.StockID equals p2.KeyAutoID into itemsStock
+                from p2 in itemsStock.DefaultIfEmpty()
+                join p3 in HongLienDb.tblIndexItemGroups.AsNoTracking().AsExpandable() on p1.GroupID equals p3.KeyAutoID
+                into itemGroup
+                from p3 in itemGroup.DefaultIfEmpty()
+                where p1.IsDeleted == false
+                select new InventoryViewModel()
+                {
+                    ItemName = p1.ItemName,
+                    GroupName = p3.GroupName,
+                    GroupID = p3.KeyAutoID,
+                    ItemId = p1.ItemID,
+                    ItemIdDisplay = p1.ItemID,
+                    StockName = p2.StockDesc,
+                    UnitId = p1.UnitID,
+                    StockId = p2.KeyAutoID
+                };
             return query;
         }
 
+        public async Task<double> GetSum(string date)
+        {
+            var listItem = await HongLienDb.tblSoDuKhoes.Where(c => c.Period == date).Select(c => c.OpenAmount).ToListAsync();
+            if (listItem.Any())
+            {
+                var sum = listItem.AsParallel().Sum();
+                return sum;
+            }
+            return 0;
+        }
 
+        public async Task Create(object currentRowDataBoundItem, string period)
+        {
+            var inventoryModel = (InventoryViewModel)currentRowDataBoundItem;
+            var soduKhoModel = new tblSoDuKho()
+            {
+                Period = period,
+                BranchID = inventoryModel.GroupID,
+                StockID = inventoryModel.StockId,
+                ItemID = inventoryModel.ItemId,
+                OpenQty = inventoryModel.Quantity,
+                OpenUnitPrice = inventoryModel.UnitPrice,
+                OpenAmount = inventoryModel.Quantity * inventoryModel.UnitPrice
+            };
+            HongLienDb.tblSoDuKhoes.Add(soduKhoModel);
+            await HongLienDb.SaveChangesAsync();
+        }
 
         public async Task<object> GetItems()
         {
