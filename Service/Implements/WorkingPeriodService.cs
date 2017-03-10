@@ -14,19 +14,44 @@ namespace Service.Implements
     public class WorkingPeriodService : BaseService, IWorkingPeriodService
     {
         
-        public List<ComboboxItem> GetList()
+        public async Task<List<ComboboxItem>> GetList()
         {
-            var model = HongLienDb.tblSysWorkingPeriods.Where(c=>c.IsDeleted == false).
-                 Select(w => new ComboboxItem()
+            var model = await HongLienDb.tblSysWorkingPeriods.AsNoTracking()
+               
+                .Select(w => new ComboboxItem()
                  {
-                 }).ToList();
+                    Text = w.KeyAutoID,
+                    Value = w.Period
+                 }).ToListAsync();
+
             model.Insert(0, ComboboxItem.Empty);
-            return model;
+            return  model;
+        }
+        public async Task<DateTime> GetServerDatetime()
+        {
+            var dateQuery = HongLienDb.Database.SqlQuery<DateTime>("SELECT getdate()");
+            return dateQuery.AsEnumerable().FirstOrDefault();
         }
 
-        public Task<bool> InitWorkingPeriod(string sPeriod)
+        public async Task<bool> InitWorkingPeriod()
         {
-            throw new NotImplementedException();
+            DateTime dServerNow = await GetServerDatetime();
+            var dPeriod = HongLienDb.tblSysWorkingPeriods.FirstOrDefault()
+                .KeyAutoID
+                .Equals(dServerNow.ToString("yyyyMM"));
+            if (dPeriod != true)
+            {
+                tblSysWorkingPeriod newPeriod = new tblSysWorkingPeriod();
+                newPeriod.KeyAutoID = dServerNow.ToString("yyyyMM");
+                DateTime dtimeTemp = dServerNow.AddMonths(1);
+
+                newPeriod.Period = dServerNow.ToString("yyyyMM");
+                newPeriod.FromDate = dServerNow.AddDays(1 - dServerNow.Day);
+                newPeriod.ToDate = dtimeTemp.AddDays(-1 - dtimeTemp.Day);
+                newPeriod.IsDeleted = false;
+                base.Update<tblSysWorkingPeriod>(newPeriod);
+            }
+            return true;
         }
 
         public WorkingPeriodService(HongLienDb hongLienDb) : base(hongLienDb)

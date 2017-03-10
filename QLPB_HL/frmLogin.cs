@@ -47,7 +47,7 @@ namespace QLPB_HL
         }
 
         private async void frmLogin_Load(object sender, EventArgs e)
-        {
+        { 
             this.cbxPeriod.DataSource = await userService.GetUserWorkingDay();
         }
     }

@@ -17,8 +17,8 @@ namespace Service.Implements
 
         public async Task<List<ComboboxItem>> GetCustomer()
         {
-            var model = await HongLienDb.tblIndexObjects.AsNoTracking()
-                    .Where(c => c.IsDeleted == false)
+            var model = await HongLienDb.tblIndexObjects
+                    .Where(c => c.IsDeleted == true)
                     .Select(c => new ComboboxItem()
                     {
                         Text = c.ObjectName,

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Model;
 using Model.ViewModel;
 using Service.Interfaces;
+using System;
 
 namespace Service.Implements
 {
@@ -24,7 +25,8 @@ namespace Service.Implements
 
         public async Task<List<ComboboxItem>> GetUserWorkingDay()
         {
-            return wSer.GetList();
+           await wSer.InitWorkingPeriod();   
+            return await wSer.GetList();
         }
     }
 }

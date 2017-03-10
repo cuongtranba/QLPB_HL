@@ -9,7 +9,7 @@ namespace Service.Interfaces
 {
     public interface IWorkingPeriodService 
     {
-        Task<bool> InitWorkingPeriod(string sPeriod);
-        List<ComboboxItem> GetList();
+        Task<bool> InitWorkingPeriod();
+        Task<List<ComboboxItem>> GetList();
     }
 }
